@@ -1,11 +1,10 @@
-# Welcome to your Jupyter Book
+# Selamat Datang di Jupyter Book Saya
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Website ini saya gunakan sebagian besar untuk menjadi rekapan tugas atau materi Penambangan Data atau Data Mining. 
+Seperti yang terlihat di Side Navigation terdapat menu tugas atau materi tersebut, untuk melihat biodata secara detil silakan kunjungi [Website Personal] (https://adamzakys.github.io/).
 
-Check out the content pages bundled with this sample book to see more.
+Lihat halaman konten yang dibundel dengan Jupyter Book contoh ini untuk melihat lebih banyak.
+
 
 ```{tableofcontents}
 ```

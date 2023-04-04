@@ -408,7 +408,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-859f019a-9828-4558-a327-436d13339435">
+  <div id="df-9df10faa-0429-4f1a-ab5e-21212542840c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -636,7 +636,7 @@ document.write(`
 </table>
 <p>303 rows × 14 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-859f019a-9828-4558-a327-436d13339435')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9df10faa-0429-4f1a-ab5e-21212542840c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -687,12 +687,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-859f019a-9828-4558-a327-436d13339435 button.colab-df-convert');
+          document.querySelector('#df-9df10faa-0429-4f1a-ab5e-21212542840c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-859f019a-9828-4558-a327-436d13339435');
+          const element = document.querySelector('#df-9df10faa-0429-4f1a-ab5e-21212542840c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -723,7 +723,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-27f47835-2029-4e40-bcbd-2d7860ad3499">
+  <div id="df-60fe9fea-0e31-443e-81e9-2fc5b07e0e75">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -848,7 +848,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-27f47835-2029-4e40-bcbd-2d7860ad3499')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-60fe9fea-0e31-443e-81e9-2fc5b07e0e75')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -899,12 +899,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-27f47835-2029-4e40-bcbd-2d7860ad3499 button.colab-df-convert');
+          document.querySelector('#df-60fe9fea-0e31-443e-81e9-2fc5b07e0e75 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-27f47835-2029-4e40-bcbd-2d7860ad3499');
+          const element = document.querySelector('#df-60fe9fea-0e31-443e-81e9-2fc5b07e0e75');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -957,7 +957,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-455b5fe4-d577-4a54-8c00-1a4ea07087fb">
+  <div id="df-564fa57d-6db1-4ddb-b828-dffa8ddb4c91">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1076,7 +1076,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-455b5fe4-d577-4a54-8c00-1a4ea07087fb')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-564fa57d-6db1-4ddb-b828-dffa8ddb4c91')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1127,12 +1127,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-455b5fe4-d577-4a54-8c00-1a4ea07087fb button.colab-df-convert');
+          document.querySelector('#df-564fa57d-6db1-4ddb-b828-dffa8ddb4c91 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-455b5fe4-d577-4a54-8c00-1a4ea07087fb');
+          const element = document.querySelector('#df-564fa57d-6db1-4ddb-b828-dffa8ddb4c91');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1233,39 +1233,6 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Check Accuracy precision, recall, f1-score</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))</span> <span class="p">)</span>
-<span class="c1">#Another way to get the models accuracy on the test data</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Precision:&#39;</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Recall:&#39;</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;F1 Score:&#39;</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)))</span>
-
-<span class="c1">#Check Roc Auc Score</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">F</span><span class="s1">&#39;Roc Auc Score:&#39;</span><span class="p">,</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))</span> <span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="sa">F</span><span class="s1">&#39;Balanced Accuracy Score:&#39;</span><span class="p">,</span><span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))</span> <span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span> <span class="sa">F</span><span class="s1">&#39;Confusion Matrix:&#39;</span><span class="p">,</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span><span class="c1">#Print a new line</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-13-77bd1a066985&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Check Accuracy precision, recall, f1-score</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#Another way to get the models accuracy on the test data</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Precision:&#39;</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)))</span>
-
-<span class="ne">NameError</span>: name &#39;classification_report&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="kesimpulan">
 <h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h3>
@@ -1305,7 +1272,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-762e71f3-5ed7-4307-b71d-357bd24072a4">
+  <div id="df-d47e2c65-931f-4e28-8a59-718bdd8ac5a0">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1430,7 +1397,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-762e71f3-5ed7-4307-b71d-357bd24072a4')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d47e2c65-931f-4e28-8a59-718bdd8ac5a0')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1481,12 +1448,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-762e71f3-5ed7-4307-b71d-357bd24072a4 button.colab-df-convert');
+          document.querySelector('#df-d47e2c65-931f-4e28-8a59-718bdd8ac5a0 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-762e71f3-5ed7-4307-b71d-357bd24072a4');
+          const element = document.querySelector('#df-d47e2c65-931f-4e28-8a59-718bdd8ac5a0');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1534,7 +1501,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b041c383-07c0-43c4-988b-fd5beb53ee40">
+  <div id="df-b47a05af-e2bb-4442-b678-1c2665df2027">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1653,7 +1620,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b041c383-07c0-43c4-988b-fd5beb53ee40')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b47a05af-e2bb-4442-b678-1c2665df2027')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1704,12 +1671,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b041c383-07c0-43c4-988b-fd5beb53ee40 button.colab-df-convert');
+          document.querySelector('#df-b47a05af-e2bb-4442-b678-1c2665df2027 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b041c383-07c0-43c4-988b-fd5beb53ee40');
+          const element = document.querySelector('#df-b47a05af-e2bb-4442-b678-1c2665df2027');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});

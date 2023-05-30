@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>MLP Clasifer &#8212; My sample book</title>
   
   
   
@@ -328,9 +328,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -341,19 +339,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>MLP Clasifer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -365,50 +355,6 @@ document.write(`
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-1-d5df0069828e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">cd</span> /content/drive/MyDrive/penambangandata/
 </pre></div>
 </div>
@@ -419,6 +365,16 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="tex2jax_ignore mathjax_ignore section" id="mlp-clasifer">
+<h1>MLP Clasifer<a class="headerlink" href="#mlp-clasifer" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li></li>
+</ul>
+<p>Nama : <strong>Muhammad Adam Zaky Jiddyansah</strong></p>
+<p>NIM  : <strong>210411100234</strong></p>
+<ul class="simple">
+<li></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># linear algebra</span>
@@ -473,7 +429,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-cb1a99c8-ee8b-4174-8b43-13b48b48166d">
+  <div id="df-c1304600-19a3-435e-9c37-589c73597a0b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -550,7 +506,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-cb1a99c8-ee8b-4174-8b43-13b48b48166d')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c1304600-19a3-435e-9c37-589c73597a0b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -601,12 +557,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-cb1a99c8-ee8b-4174-8b43-13b48b48166d button.colab-df-convert');
+          document.querySelector('#df-c1304600-19a3-435e-9c37-589c73597a0b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-cb1a99c8-ee8b-4174-8b43-13b48b48166d');
+          const element = document.querySelector('#df-c1304600-19a3-435e-9c37-589c73597a0b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -634,7 +590,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fb93e57b430&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fed99b0e8c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/dac70906583fdfcf332745acc457e4c668987ac2dfbc72432f8b87ea3178e993.png" src="../_images/dac70906583fdfcf332745acc457e4c668987ac2dfbc72432f8b87ea3178e993.png" />
@@ -648,7 +604,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-637f7915-79ee-4039-954b-c5652451b57e">
+  <div id="df-bf0dfafa-04ab-4d08-8fe2-aa951cb24d03">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -743,7 +699,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-637f7915-79ee-4039-954b-c5652451b57e')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bf0dfafa-04ab-4d08-8fe2-aa951cb24d03')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -794,12 +750,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-637f7915-79ee-4039-954b-c5652451b57e button.colab-df-convert');
+          document.querySelector('#df-bf0dfafa-04ab-4d08-8fe2-aa951cb24d03 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-637f7915-79ee-4039-954b-c5652451b57e');
+          const element = document.querySelector('#df-bf0dfafa-04ab-4d08-8fe2-aa951cb24d03');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -829,7 +785,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6de99953-b6ca-4368-a320-45fd9b545ff8">
+  <div id="df-5f082a43-1fbf-41d0-960a-4ade56e4dc91">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -857,44 +813,44 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>28</th>
-      <td>0.250000</td>
-      <td>0.583333</td>
-      <td>0.067797</td>
+      <th>80</th>
+      <td>0.333333</td>
+      <td>0.166667</td>
+      <td>0.474576</td>
+      <td>0.416667</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.111111</td>
+      <td>0.500000</td>
+      <td>0.050847</td>
       <td>0.041667</td>
     </tr>
     <tr>
-      <th>61</th>
-      <td>0.444444</td>
-      <td>0.416667</td>
-      <td>0.542373</td>
-      <td>0.583333</td>
+      <th>36</th>
+      <td>0.333333</td>
+      <td>0.625000</td>
+      <td>0.050847</td>
+      <td>0.041667</td>
     </tr>
     <tr>
-      <th>143</th>
-      <td>0.694444</td>
+      <th>115</th>
+      <td>0.583333</td>
       <td>0.500000</td>
-      <td>0.830508</td>
+      <td>0.728814</td>
       <td>0.916667</td>
     </tr>
     <tr>
-      <th>92</th>
-      <td>0.416667</td>
-      <td>0.250000</td>
-      <td>0.508475</td>
-      <td>0.458333</td>
-    </tr>
-    <tr>
-      <th>121</th>
-      <td>0.361111</td>
+      <th>90</th>
       <td>0.333333</td>
-      <td>0.661017</td>
-      <td>0.791667</td>
+      <td>0.250000</td>
+      <td>0.576271</td>
+      <td>0.458333</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6de99953-b6ca-4368-a320-45fd9b545ff8')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-5f082a43-1fbf-41d0-960a-4ade56e4dc91')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -945,12 +901,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6de99953-b6ca-4368-a320-45fd9b545ff8 button.colab-df-convert');
+          document.querySelector('#df-5f082a43-1fbf-41d0-960a-4ade56e4dc91 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6de99953-b6ca-4368-a320-45fd9b545ff8');
+          const element = document.querySelector('#df-5f082a43-1fbf-41d0-960a-4ade56e4dc91');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -979,7 +935,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-9c43604a-f065-4e0a-8fa4-7bbfdfec20f2">
+  <div id="df-ddec313d-659c-427f-bc6d-1889c530474d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1065,7 +1021,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-9c43604a-f065-4e0a-8fa4-7bbfdfec20f2')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ddec313d-659c-427f-bc6d-1889c530474d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1116,12 +1072,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-9c43604a-f065-4e0a-8fa4-7bbfdfec20f2 button.colab-df-convert');
+          document.querySelector('#df-ddec313d-659c-427f-bc6d-1889c530474d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-9c43604a-f065-4e0a-8fa4-7bbfdfec20f2');
+          const element = document.querySelector('#df-ddec313d-659c-427f-bc6d-1889c530474d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1151,7 +1107,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a77a32c9-4e37-4e81-b0fe-247252f10344">
+  <div id="df-8160d963-9ddd-40a5-be42-0eb1e502d30b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1176,29 +1132,29 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>6</th>
+      <th>35</th>
       <td>0</td>
     </tr>
     <tr>
-      <th>36</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>138</th>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>52</th>
+      <th>87</th>
       <td>1</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>0</td>
+      <th>82</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a77a32c9-4e37-4e81-b0fe-247252f10344')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-8160d963-9ddd-40a5-be42-0eb1e502d30b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1249,12 +1205,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a77a32c9-4e37-4e81-b0fe-247252f10344 button.colab-df-convert');
+          document.querySelector('#df-8160d963-9ddd-40a5-be42-0eb1e502d30b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a77a32c9-4e37-4e81-b0fe-247252f10344');
+          const element = document.querySelector('#df-8160d963-9ddd-40a5-be42-0eb1e502d30b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1284,7 +1240,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d8a9f27a-124c-41e1-a58a-0d1b419ee60c">
+  <div id="df-f5eca343-4f2d-4718-92d9-9b14852c78b3">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1313,49 +1269,49 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>110</th>
-      <td>0.611111</td>
-      <td>0.500000</td>
-      <td>0.694915</td>
-      <td>0.791667</td>
-      <td>2</td>
+      <th>62</th>
+      <td>0.472222</td>
+      <td>0.083333</td>
+      <td>0.508475</td>
+      <td>0.375000</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>18</th>
-      <td>0.388889</td>
-      <td>0.750000</td>
-      <td>0.118644</td>
+      <th>14</th>
+      <td>0.416667</td>
+      <td>0.833333</td>
+      <td>0.033898</td>
+      <td>0.041667</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>0.694444</td>
+      <td>0.333333</td>
+      <td>0.644068</td>
+      <td>0.541667</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>0.138889</td>
+      <td>0.416667</td>
+      <td>0.067797</td>
       <td>0.083333</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>69</th>
-      <td>0.361111</td>
-      <td>0.208333</td>
-      <td>0.491525</td>
-      <td>0.416667</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>121</th>
-      <td>0.361111</td>
-      <td>0.333333</td>
-      <td>0.661017</td>
-      <td>0.791667</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>0</th>
+      <th>44</th>
       <td>0.222222</td>
-      <td>0.625000</td>
-      <td>0.067797</td>
-      <td>0.041667</td>
+      <td>0.750000</td>
+      <td>0.152542</td>
+      <td>0.125000</td>
       <td>0</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d8a9f27a-124c-41e1-a58a-0d1b419ee60c')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f5eca343-4f2d-4718-92d9-9b14852c78b3')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1406,12 +1362,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d8a9f27a-124c-41e1-a58a-0d1b419ee60c button.colab-df-convert');
+          document.querySelector('#df-f5eca343-4f2d-4718-92d9-9b14852c78b3 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d8a9f27a-124c-41e1-a58a-0d1b419ee60c');
+          const element = document.querySelector('#df-f5eca343-4f2d-4718-92d9-9b14852c78b3');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1445,7 +1401,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-0ec710cf-99fc-43e7-95d5-ecf1bd66705e">
+  <div id="df-aeb64f43-aac7-4b22-b0e4-5029c4b377ec">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1473,44 +1429,44 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>145</th>
-      <td>0.666667</td>
-      <td>0.416667</td>
-      <td>0.711864</td>
-      <td>0.916667</td>
-    </tr>
-    <tr>
-      <th>104</th>
-      <td>0.611111</td>
-      <td>0.416667</td>
-      <td>0.813559</td>
-      <td>0.875000</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>0.611111</td>
-      <td>0.333333</td>
-      <td>0.610169</td>
+      <th>128</th>
       <td>0.583333</td>
-    </tr>
-    <tr>
-      <th>122</th>
-      <td>0.944444</td>
       <td>0.333333</td>
-      <td>0.966102</td>
-      <td>0.791667</td>
+      <td>0.779661</td>
+      <td>0.833333</td>
     </tr>
     <tr>
-      <th>46</th>
+      <th>90</th>
+      <td>0.333333</td>
+      <td>0.250000</td>
+      <td>0.576271</td>
+      <td>0.458333</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>0.805556</td>
+      <td>0.666667</td>
+      <td>0.864407</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>44</th>
       <td>0.222222</td>
       <td>0.750000</td>
-      <td>0.101695</td>
-      <td>0.041667</td>
+      <td>0.152542</td>
+      <td>0.125000</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>0.166667</td>
+      <td>0.208333</td>
+      <td>0.593220</td>
+      <td>0.666667</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-0ec710cf-99fc-43e7-95d5-ecf1bd66705e')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-aeb64f43-aac7-4b22-b0e4-5029c4b377ec')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1561,12 +1517,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-0ec710cf-99fc-43e7-95d5-ecf1bd66705e button.colab-df-convert');
+          document.querySelector('#df-aeb64f43-aac7-4b22-b0e4-5029c4b377ec button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-0ec710cf-99fc-43e7-95d5-ecf1bd66705e');
+          const element = document.querySelector('#df-aeb64f43-aac7-4b22-b0e4-5029c4b377ec');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1594,11 +1550,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>145    2
-104    2
-54     1
-122    2
-46     0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128    2
+90     1
+109    2
+44     0
+106    2
 Name: Species, dtype: int64
 </pre></div>
 </div>
@@ -1612,7 +1568,7 @@ Name: Species, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-38fb9239-d7a7-439d-a471-30a378361bb9">
+  <div id="df-4e0a654e-7eaa-4919-91da-883c3b08dc2c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1640,44 +1596,44 @@ Name: Species, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>69</th>
-      <td>0.361111</td>
-      <td>0.208333</td>
-      <td>0.491525</td>
-      <td>0.416667</td>
+      <th>35</th>
+      <td>0.194444</td>
+      <td>0.500000</td>
+      <td>0.033898</td>
+      <td>0.041667</td>
     </tr>
     <tr>
-      <th>57</th>
-      <td>0.166667</td>
-      <td>0.166667</td>
+      <th>86</th>
+      <td>0.666667</td>
+      <td>0.458333</td>
+      <td>0.627119</td>
+      <td>0.583333</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>0.194444</td>
+      <td>0.125000</td>
       <td>0.389831</td>
       <td>0.375000</td>
     </tr>
     <tr>
-      <th>123</th>
-      <td>0.555556</td>
-      <td>0.291667</td>
-      <td>0.661017</td>
+      <th>125</th>
+      <td>0.805556</td>
+      <td>0.500000</td>
+      <td>0.847458</td>
       <td>0.708333</td>
     </tr>
     <tr>
-      <th>142</th>
-      <td>0.416667</td>
-      <td>0.291667</td>
-      <td>0.694915</td>
-      <td>0.750000</td>
-    </tr>
-    <tr>
-      <th>15</th>
+      <th>99</th>
       <td>0.388889</td>
-      <td>1.000000</td>
-      <td>0.084746</td>
-      <td>0.125000</td>
+      <td>0.333333</td>
+      <td>0.525424</td>
+      <td>0.500000</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-38fb9239-d7a7-439d-a471-30a378361bb9')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4e0a654e-7eaa-4919-91da-883c3b08dc2c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1728,12 +1684,12 @@ Name: Species, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-38fb9239-d7a7-439d-a471-30a378361bb9 button.colab-df-convert');
+          document.querySelector('#df-4e0a654e-7eaa-4919-91da-883c3b08dc2c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-38fb9239-d7a7-439d-a471-30a378361bb9');
+          const element = document.querySelector('#df-4e0a654e-7eaa-4919-91da-883c3b08dc2c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1768,8 +1724,8 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MLPClassifier(alpha=1e-05, hidden_layer_sizes=(3, 3), random_state=1,
-              solver=&#x27;lbfgs&#x27;)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">MLPClassifier</label><div class="sk-toggleable__content"><pre>MLPClassifier(alpha=1e-05, hidden_layer_sizes=(3, 3), random_state=1,
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>MLPClassifier(alpha=1e-05, hidden_layer_sizes=(3, 3), random_state=1,
+              solver=&#x27;lbfgs&#x27;)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">MLPClassifier</label><div class="sk-toggleable__content"><pre>MLPClassifier(alpha=1e-05, hidden_layer_sizes=(3, 3), random_state=1,
               solver=&#x27;lbfgs&#x27;)</pre></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1780,8 +1736,8 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 2 2 0 1 0 1 2 0 0 0 1 2 1 1 0 0 0 1 0 1 1 2 1 2 2 1 2 0 1 1 0 1 0 2 0
- 0 1 1 1 0 1 2 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 1 2 1 2 1 1 2 0 0 2 0 1 1 2 0 1 2 0 0 1 1 1 2 2 0 0 1 2 2 0 2 0 2 2 0
+ 0 2 1 2 1 2 0 0]
 </pre></div>
 </div>
 </div>
@@ -1793,8 +1749,8 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 2 2 0 1 0 1 2 0 0 0 1 1 1 1 0 0 0 2 0 1 2 2 1 2 2 1 2 0 1 1 0 1 0 2 0
- 0 1 1 1 0 2 2 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 1 2 1 2 1 1 2 0 0 2 0 1 1 2 0 1 2 0 0 1 1 1 2 2 0 0 1 2 2 0 2 0 2 2 0
+ 0 2 2 2 1 2 0 0]
 </pre></div>
 </div>
 </div>
@@ -1806,7 +1762,7 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy of the Multi-layer Perceptron is: 0.9111111111111111
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy of the Multi-layer Perceptron is: 0.9777777777777777
 </pre></div>
 </div>
 </div>
@@ -1819,17 +1775,9 @@ Name: Species, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting ColabTurtle
-  Downloading ColabTurtle-2.1.0.tar.gz (6.8 kB)
-  Preparing metadata (setup.py) ... ?25l?25hdone
-Building wheels for collected packages: ColabTurtle
-  Building wheel for ColabTurtle (setup.py) ... ?25l?25hdone
-  Created wheel for ColabTurtle: filename=ColabTurtle-2.1.0-py3-none-any.whl size=7642 sha256=81a82be5457fec4a7abd9e41b42278608205caa24e9a8ee0a88729349f53d20b
-  Stored in directory: /root/.cache/pip/wheels/5b/86/e8/54f5c8c853606e3a3060bb2e60363cbed632374a12e0f33ffc
-Successfully built ColabTurtle
-Installing collected packages: ColabTurtle
-Successfully installed ColabTurtle-2.1.0
+Requirement already satisfied: ColabTurtle in /usr/local/lib/python3.10/dist-packages (2.1.0)
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1874,20 +1822,6 @@ Successfully installed ColabTurtle-2.1.0
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>MLP Clasifer &#8212; My sample book</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -63,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas/MLP_Clasifier';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="Crawling_berita_Kompas.html" />
     <link rel="prev" title="PCA Pendata" href="PCA-Pendata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -74,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,13 +146,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -347,10 +360,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -358,7 +371,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -399,7 +412,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="mlp-clasifer">
+<section class="tex2jax_ignore mathjax_ignore" id="mlp-clasifer">
 <h1>MLP Clasifer<a class="headerlink" href="#mlp-clasifer" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li></li>
@@ -463,9 +476,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-964cb7b5-b4e9-4382-96ee-24b4f3aefb66">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-c726420b-0418-4e3b-a162-84abb7d7c2e5" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -540,21 +552,21 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-964cb7b5-b4e9-4382-96ee-24b4f3aefb66')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c726420b-0418-4e3b-a162-84abb7d7c2e5')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -576,6 +588,10 @@ document.write(`
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -589,30 +605,32 @@ document.write(`
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-964cb7b5-b4e9-4382-96ee-24b4f3aefb66 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-c726420b-0418-4e3b-a162-84abb7d7c2e5 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-964cb7b5-b4e9-4382-96ee-24b4f3aefb66');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-c726420b-0418-4e3b-a162-84abb7d7c2e5');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -624,7 +642,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f27fe1deaa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7b720ec3b0a0&gt;
 </pre></div>
 </div>
 <img alt="../_images/dac70906583fdfcf332745acc457e4c668987ac2dfbc72432f8b87ea3178e993.png" src="../_images/dac70906583fdfcf332745acc457e4c668987ac2dfbc72432f8b87ea3178e993.png" />
@@ -638,9 +656,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-7423f766-dc2e-460c-bafa-61daca39ec25">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-c9f5311e-610b-4746-afea-dead8fa4e4c9" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -733,21 +750,21 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-7423f766-dc2e-460c-bafa-61daca39ec25')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c9f5311e-610b-4746-afea-dead8fa4e4c9')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -769,6 +786,10 @@ document.write(`
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -782,30 +803,32 @@ document.write(`
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-7423f766-dc2e-460c-bafa-61daca39ec25 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-c9f5311e-610b-4746-afea-dead8fa4e4c9 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-7423f766-dc2e-460c-bafa-61daca39ec25');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-c9f5311e-610b-4746-afea-dead8fa4e4c9');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -819,9 +842,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e40046db-2cb7-4739-850f-0c159a8b8517">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-b33e5ed9-1e6e-473a-adff-296d22d67e8b" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -847,58 +869,58 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>47</th>
-      <td>0.083333</td>
+      <th>75</th>
+      <td>0.638889</td>
+      <td>0.416667</td>
+      <td>0.576271</td>
+      <td>0.541667</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>0.805556</td>
       <td>0.500000</td>
+      <td>0.847458</td>
+      <td>0.708333</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>0.694444</td>
+      <td>0.500000</td>
+      <td>0.830508</td>
+      <td>0.916667</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.166667</td>
+      <td>0.416667</td>
       <td>0.067797</td>
       <td>0.041667</td>
     </tr>
     <tr>
-      <th>17</th>
-      <td>0.222222</td>
-      <td>0.625000</td>
-      <td>0.067797</td>
-      <td>0.083333</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>0.138889</td>
-      <td>0.416667</td>
-      <td>0.067797</td>
-      <td>0.083333</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>0.222222</td>
-      <td>0.750000</td>
-      <td>0.084746</td>
-      <td>0.083333</td>
-    </tr>
-    <tr>
-      <th>86</th>
-      <td>0.666667</td>
-      <td>0.458333</td>
-      <td>0.627119</td>
+      <th>20</th>
+      <td>0.305556</td>
       <td>0.583333</td>
+      <td>0.118644</td>
+      <td>0.041667</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-e40046db-2cb7-4739-850f-0c159a8b8517')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b33e5ed9-1e6e-473a-adff-296d22d67e8b')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -920,6 +942,10 @@ document.write(`
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -933,30 +959,32 @@ document.write(`
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-e40046db-2cb7-4739-850f-0c159a8b8517 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-b33e5ed9-1e6e-473a-adff-296d22d67e8b button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-e40046db-2cb7-4739-850f-0c159a8b8517');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-b33e5ed9-1e6e-473a-adff-296d22d67e8b');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -969,9 +997,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ec9f7c7f-f0c0-464c-9661-1b80ebba480b">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-bfdcd614-4196-4e53-bd10-507f4677d6c1" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1055,21 +1082,21 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ec9f7c7f-f0c0-464c-9661-1b80ebba480b')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-bfdcd614-4196-4e53-bd10-507f4677d6c1')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -1091,6 +1118,10 @@ document.write(`
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -1104,30 +1135,32 @@ document.write(`
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-ec9f7c7f-f0c0-464c-9661-1b80ebba480b button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-bfdcd614-4196-4e53-bd10-507f4677d6c1 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ec9f7c7f-f0c0-464c-9661-1b80ebba480b');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-bfdcd614-4196-4e53-bd10-507f4677d6c1');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -1141,9 +1174,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a2fd2627-c63e-4df9-8815-b5682b481a43">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-bbb53ab7-0cf8-4ace-9f47-6a313e65bec9" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1166,43 +1198,43 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>15</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>140</th>
+      <th>147</th>
       <td>2</td>
     </tr>
     <tr>
-      <th>87</th>
-      <td>1</td>
+      <th>24</th>
+      <td>0</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>23</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
       <td>0</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a2fd2627-c63e-4df9-8815-b5682b481a43')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-bbb53ab7-0cf8-4ace-9f47-6a313e65bec9')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -1224,6 +1256,10 @@ document.write(`
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -1237,30 +1273,32 @@ document.write(`
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-a2fd2627-c63e-4df9-8815-b5682b481a43 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-bbb53ab7-0cf8-4ace-9f47-6a313e65bec9 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a2fd2627-c63e-4df9-8815-b5682b481a43');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-bbb53ab7-0cf8-4ace-9f47-6a313e65bec9');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -1274,9 +1312,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d42edd34-6a26-4953-9aad-f9df9a35771f">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-7409fa17-0fea-46a9-98bc-f8e74500ff20" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1303,63 +1340,63 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>36</th>
-      <td>0.333333</td>
-      <td>0.625000</td>
-      <td>0.050847</td>
-      <td>0.041667</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>0.222222</td>
-      <td>0.625000</td>
-      <td>0.067797</td>
-      <td>0.041667</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>0.194444</td>
+      <th>32</th>
+      <td>0.250000</td>
+      <td>0.875000</td>
+      <td>0.084746</td>
       <td>0.000000</td>
-      <td>0.423729</td>
-      <td>0.375000</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>95</th>
-      <td>0.388889</td>
+      <th>149</th>
+      <td>0.444444</td>
       <td>0.416667</td>
-      <td>0.542373</td>
-      <td>0.458333</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>125</th>
-      <td>0.805556</td>
-      <td>0.500000</td>
-      <td>0.847458</td>
+      <td>0.694915</td>
       <td>0.708333</td>
       <td>2</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>0.305556</td>
+      <td>0.583333</td>
+      <td>0.084746</td>
+      <td>0.125000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>0.833333</td>
+      <td>0.375000</td>
+      <td>0.898305</td>
+      <td>0.708333</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>0.166667</td>
+      <td>0.166667</td>
+      <td>0.389831</td>
+      <td>0.375000</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d42edd34-6a26-4953-9aad-f9df9a35771f')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7409fa17-0fea-46a9-98bc-f8e74500ff20')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -1381,6 +1418,10 @@ document.write(`
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -1394,30 +1435,32 @@ document.write(`
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-d42edd34-6a26-4953-9aad-f9df9a35771f button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-7409fa17-0fea-46a9-98bc-f8e74500ff20 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d42edd34-6a26-4953-9aad-f9df9a35771f');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-7409fa17-0fea-46a9-98bc-f8e74500ff20');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -1435,9 +1478,8 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-26ec91ac-094f-4fbc-899b-d856d21e93df">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-737d1f5f-7565-42c9-b6f9-e35c12056c9d" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1463,58 +1505,58 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>111</th>
+      <th>11</th>
+      <td>0.138889</td>
       <td>0.583333</td>
+      <td>0.101695</td>
+      <td>0.041667</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>0.250000</td>
       <td>0.291667</td>
-      <td>0.728814</td>
-      <td>0.750000</td>
+      <td>0.491525</td>
+      <td>0.541667</td>
     </tr>
     <tr>
-      <th>143</th>
-      <td>0.694444</td>
-      <td>0.500000</td>
-      <td>0.830508</td>
-      <td>0.916667</td>
-    </tr>
-    <tr>
-      <th>87</th>
-      <td>0.555556</td>
-      <td>0.125000</td>
-      <td>0.576271</td>
-      <td>0.500000</td>
-    </tr>
-    <tr>
-      <th>138</th>
-      <td>0.472222</td>
-      <td>0.416667</td>
-      <td>0.644068</td>
-      <td>0.708333</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>0.166667</td>
-      <td>0.166667</td>
-      <td>0.389831</td>
+      <th>79</th>
+      <td>0.388889</td>
+      <td>0.250000</td>
+      <td>0.423729</td>
       <td>0.375000</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>0.555556</td>
+      <td>0.583333</td>
+      <td>0.779661</td>
+      <td>0.958333</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>0.194444</td>
+      <td>0.500000</td>
+      <td>0.033898</td>
+      <td>0.041667</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-26ec91ac-094f-4fbc-899b-d856d21e93df')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-737d1f5f-7565-42c9-b6f9-e35c12056c9d')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -1536,6 +1578,10 @@ document.write(`
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -1549,30 +1595,32 @@ document.write(`
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-26ec91ac-094f-4fbc-899b-d856d21e93df button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-737d1f5f-7565-42c9-b6f9-e35c12056c9d button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-26ec91ac-094f-4fbc-899b-d856d21e93df');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-737d1f5f-7565-42c9-b6f9-e35c12056c9d');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -1584,11 +1632,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111    2
-143    2
-87     1
-138    2
-57     1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11     0
+59     1
+79     1
+136    2
+35     0
 Name: Species, dtype: int64
 </pre></div>
 </div>
@@ -1602,9 +1650,8 @@ Name: Species, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-168010c3-554d-4054-9cbc-ddea541e1c9a">
-    <div class="colab-df-container">
-      <div>
+  <div id="df-ffa7cebb-bd79-4639-87d0-e29c31df08b2" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1630,18 +1677,18 @@ Name: Species, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>7</th>
-      <td>0.194444</td>
-      <td>0.583333</td>
+      <th>21</th>
+      <td>0.222222</td>
+      <td>0.708333</td>
       <td>0.084746</td>
-      <td>0.041667</td>
+      <td>0.125000</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>0.166667</td>
+      <th>114</th>
       <td>0.416667</td>
-      <td>0.067797</td>
-      <td>0.041667</td>
+      <td>0.333333</td>
+      <td>0.694915</td>
+      <td>0.958333</td>
     </tr>
     <tr>
       <th>99</th>
@@ -1651,37 +1698,37 @@ Name: Species, dtype: int64
       <td>0.500000</td>
     </tr>
     <tr>
-      <th>45</th>
-      <td>0.138889</td>
-      <td>0.416667</td>
-      <td>0.067797</td>
-      <td>0.083333</td>
+      <th>109</th>
+      <td>0.805556</td>
+      <td>0.666667</td>
+      <td>0.864407</td>
+      <td>1.000000</td>
     </tr>
     <tr>
-      <th>51</th>
-      <td>0.583333</td>
-      <td>0.500000</td>
-      <td>0.593220</td>
-      <td>0.583333</td>
+      <th>90</th>
+      <td>0.333333</td>
+      <td>0.250000</td>
+      <td>0.576271</td>
+      <td>0.458333</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-168010c3-554d-4054-9cbc-ddea541e1c9a')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
+    <div class="colab-df-buttons">
       
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ffa7cebb-bd79-4639-87d0-e29c31df08b2')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
   <style>
     .colab-df-container {
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
     }
 
@@ -1703,6 +1750,10 @@ Name: Species, dtype: int64
       fill: #174EA6;
     }
 
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
       fill: #D2E3FC;
@@ -1716,30 +1767,32 @@ Name: Species, dtype: int64
     }
   </style>
 
-      <script>
-        const buttonEl =
-          document.querySelector('#df-168010c3-554d-4054-9cbc-ddea541e1c9a button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
+    <script>
+      const buttonEl =
+        document.querySelector('#df-ffa7cebb-bd79-4639-87d0-e29c31df08b2 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-168010c3-554d-4054-9cbc-ddea541e1c9a');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-ffa7cebb-bd79-4639-87d0-e29c31df08b2');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
     </div>
   </div>
   </div></div>
@@ -1770,8 +1823,8 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 0 1 0 1 2 0 1 0 0 2 2 0 1 1 0 0 0 2 1 0 2 1 2 0 2 0 0 1 2 2 2 2 1 1 1 0
- 1 2 2 2 1 1 0 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 2 1 2 1 2 0 2 1 2 2 1 0 2 1 2 2 1 1 0 0 1 0 2 2 1 2 2 0 2 2 2 1 1 1 2 0
+ 2 0 0 1 1 0 1 0]
 </pre></div>
 </div>
 </div>
@@ -1783,8 +1836,8 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 0 1 0 1 2 0 1 0 0 2 2 0 1 1 0 0 0 2 1 0 2 1 1 0 2 0 0 1 2 2 2 2 1 1 1 0
- 1 2 2 2 1 1 0 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 2 1 2 1 2 0 2 2 2 2 1 0 2 1 2 2 1 1 0 0 1 0 2 1 1 2 2 0 2 2 2 1 1 1 2 0
+ 2 0 0 1 1 0 1 0]
 </pre></div>
 </div>
 </div>
@@ -1796,7 +1849,7 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy of the Multi-layer Perceptron is: 0.9777777777777777
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy of the Multi-layer Perceptron is: 0.9555555555555556
 </pre></div>
 </div>
 </div>
@@ -1808,13 +1861,31 @@ Name: Species, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: ColabTurtle in /usr/local/lib/python3.10/dist-packages (2.1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ColabTurtle
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ColabTurtle-2.1.0.tar.gz (6.8 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
+Building wheels for collected packages: ColabTurtle
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for ColabTurtle (setup.py) ... ?25l?25hdone
+  Created wheel for ColabTurtle: filename=ColabTurtle-2.1.0-py3-none-any.whl size=7641 sha256=608cb9d7852734c66d89bb707c2535ed61ec8d58b0ad4379e98977de7592816a
+  Stored in directory: /root/.cache/pip/wheels/5b/86/e8/54f5c8c853606e3a3060bb2e60363cbed632374a12e0f33ffc
+Successfully built ColabTurtle
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: ColabTurtle
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed ColabTurtle-2.1.0
 </pre></div>
 </div>
 </div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1841,11 +1912,10 @@ Requirement already satisfied: ColabTurtle in /usr/local/lib/python3.10/dist-pac
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="PCA-Pendata.html"
@@ -1856,10 +1926,16 @@ Requirement already satisfied: ColabTurtle in /usr/local/lib/python3.10/dist-pac
         <p class="prev-next-title">PCA Pendata</p>
       </div>
     </a>
-</div></div>
-  
+    <a class="right-next"
+       href="Crawling_berita_Kompas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-
                 </footer>
               
             </div>
@@ -1908,8 +1984,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

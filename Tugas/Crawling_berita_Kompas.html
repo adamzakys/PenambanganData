@@ -489,7 +489,7 @@ document.write(`
 <p>Kode ini menggunakan teknik web scraping untuk mengumpulkan judul dan isi berita dari 200 halaman indeks situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>. Berikut adalah penjelasan komponen utama dari kode tersebut:</p>
 <p><strong>Proses Web Scraping dan menyimpan data</strong></p>
 <ul class="simple">
-<li><p>Iterasi sebanyak 200 halaman indeks(tergantung indeks pada website) di situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>.</p></li>
+<li><p>Iterasi sebanyak 5 (karna yang akan dipreprocessing kali ini cuman 1 berita) halaman indeks(tergantung indeks pada website) di situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>.</p></li>
 <li><p>Untuk setiap halaman, melakukan permintaan HTTP dan mendapatkan konten HTML.</p></li>
 <li><p>Menggunakan BeautifulSoup untuk mengekstrak daftar berita dari halaman tersebut.</p></li>
 <li><p>Untuk setiap berita, mengakses halaman individu untuk mengambil judul dan isi berita.</p></li>
@@ -592,7 +592,7 @@ Penyimpanan Data</p></li>
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-c5f43078-357c-47e9-a76c-fa5991e8925e" class="colab-df-container">
+  <div id="df-7b6f8c3f-64b0-451c-ac72-ea121628d31f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -618,23 +618,23 @@ Penyimpanan Data</p></li>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Pemprov DKI Sebut Pemindahan Kabel ke Bawah Ta...</td>
-      <td>Pemprov DKI Sebut Pemindahan Kabel ke Bawah Ta...</td>
+      <td>Chris Martin Singgung Kemacetan Jakarta</td>
+      <td>Chris Martin Singgung Kemacetan Jakarta\nTim R...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Elders Rilis Paket Konversi Motor Listrik Mura...</td>
-      <td>Elders Rilis Paket Konversi Motor Listrik Mura...</td>
+      <td>Pulihkan Nama Baik Mahasiswa yang Dituduh Laku...</td>
+      <td>Pulihkan Nama Baik Mahasiswa yang Dituduh Laku...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Ini Cerita Anak Pedagang Keliling yang Ikut II...</td>
-      <td>Ini Cerita Anak Pedagang Keliling yang Ikut II...</td>
+      <td>Peritel: Waspada, Kenaikan Harga Gula Bisa Bik...</td>
+      <td>Peritel: Waspada, Kenaikan Harga Gula Bisa Bik...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Jadi Korban Penipuan Calo Tiket, Artis Susan S...</td>
-      <td>Jadi Korban Penipuan Calo Tiket, Artis Susan S...</td>
+      <td>KPK: OTT di Bondowoso Terkait Pengurusan Perka...</td>
+      <td>KPK: OTT di Bondowoso Terkait Pengurusan Perka...</td>
     </tr>
   </tbody>
 </table>
@@ -642,7 +642,7 @@ Penyimpanan Data</p></li>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c5f43078-357c-47e9-a76c-fa5991e8925e')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7b6f8c3f-64b0-451c-ac72-ea121628d31f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -694,12 +694,12 @@ Penyimpanan Data</p></li>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c5f43078-357c-47e9-a76c-fa5991e8925e button.colab-df-convert');
+        document.querySelector('#df-7b6f8c3f-64b0-451c-ac72-ea121628d31f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c5f43078-357c-47e9-a76c-fa5991e8925e');
+        const element = document.querySelector('#df-7b6f8c3f-64b0-451c-ac72-ea121628d31f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -719,8 +719,8 @@ Penyimpanan Data</p></li>
   </div>
 
 
-<div id="df-4ea516ce-60dd-4df1-b31b-ef18aec821f5">
-  <button class="colab-df-quickchart" onclick="quickchart('df-4ea516ce-60dd-4df1-b31b-ef18aec821f5')"
+<div id="df-3868905f-5104-4af6-8b37-1db12f8a2cb4">
+  <button class="colab-df-quickchart" onclick="quickchart('df-3868905f-5104-4af6-8b37-1db12f8a2cb4')"
             title="Suggest charts"
             style="display:none;">
 
@@ -839,7 +839,7 @@ Penyimpanan Data</p></li>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-4ea516ce-60dd-4df1-b31b-ef18aec821f5 button');
+        document.querySelector('#df-3868905f-5104-4af6-8b37-1db12f8a2cb4 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -860,7 +860,7 @@ Penyimpanan Data</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen \nTim Redaksi\nJAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.\n&quot;Iya untuk titik kawasan itu saja. Sudah 90 persen. Jadi yang di Mampang itu tinggal sedikit. Nanti akan bergeser lagi ke wilayah lain,&quot; ujar Heru saat dikonfirmasi, Kamis (16/11/2023).\nNamun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.\nBaca juga: Heru Budi Akui Sulit Rapikan Kabel Semrawut di Udara ke Bawah Tanah\nMenurut Heru, proses pemindahan ke SJUT itu terus dilakukan setiap hari sampai tidak ada lagi kabel semrawut di udara.\n&quot;Untuk peralihan (kabel udara ke bawah tanah) yang sudah ada SJUT. Karena pindah kan tidak bisa sekaligus pindah, tapi bertahap,&quot; kata Heru.\n&quot;Jadi Jalan terus, karena SJUT itu jalan terus. Lokasi yang belum ada SJUT, nanti itu akan masuk SJUT,&quot; kata Heru lagi.\nKepala Bidang (Kabid) Prasarana dan Sarana Utilitas Dinas Bina Marga DKI Jakarta Samsul Bahri sebelumnya menjelaskan, pembuatan SJUT itu sampai saat ini masih dilakukan.\nBaca juga: Kabel Optik Semrawut di Jakarta Bakal Dipindah ke Bawah Tanah secara Bertahap mulai September 2023\nAdapun 10 titik di kawasan Jakarta Selatan yang sudah tersedia SJUT antara lain di wilayah Mampang Prapatan, Senopati, Jalan Suryo, Walter Mongonsidi, Cikajang, dan Pattimura.\n&quot;Ini masih berlanjut dari penugasan Pemda itu kan ada penugasan ke Jakpro sama Sarana Jaya untuk pembangunan SJUT,&quot; ucap Samsul.\nSamsul mengatakan, Dinas Bina Marga DKI telah memerintahkan agar perusahaan pemilik kabel utilitas memindahkan kabel di udara ke bawah tanah atau SJUT yang sudah terbangun.\n&quot;Dan memang butuh waktu dan proses karena panjang kilometer yang sudah dibangun SJUT itu sekitar 24,5 kilometer. Kan itu masih terus berproses,&quot; ucap Samsul.\n\xa0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDapatkan informasi dan insight pilihan redaksi Kompas.com&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Chris Martin Singgung Kemacetan Jakarta\nTim Redaksi\nJAKARTA, KOMPAS.com - Band Coldplay ikut merasakan kemacetan Kota Jakarta saat pertama kali ke Indonesia. \nMomen itu diungkap sang vokalis Chris Martin di panggung konser Music of the Spheres World Tour di Stadion Utama Gelora Bung Karno (SUGBK) Senayan, Jakarta, Rabu (15/11/2023).\n&quot;Lalu lintas di Jakarta sangat gila. Macet dan saya rasa itu sial sekali. Menyebalkan. Kalian tidak sendirian, saya juga merasakannya,&quot; kata Chris Martin. \nMeski begitu, Chris Martin tetap bahagia bisa tampil perdana di hadapan 80.000 penggemarnya di Jakarta. \nBaca juga: Julian Jacob dan Mirriam Eka Titipkan Anaknya ke Orangtua demi Nonton Konser Coldplay\nKOMPAS.com/RODERICK ADRIAN Antusiasme penggemar Coldplay saat menonton konser Music of the Spheres World Tour, di Stadion Utama Gelora Bung Karno, Jakarta, Rabu (15/11/2023). Dalam penampilannya Coldplay membawakan sejumlah lagu hits mereka seperti Higher Power, Paradise, Viva La Vida, hingga Everglow.&quot;Terima kasih kalian semua sudah meramaikan show besar ini. Terima kasih untuk Rahmania Astrini yang sudah membuka acara. Kalian semuanya, kru, pengayuh sepeda, dan semuanya yang sudah memberikan energi,&quot; ucap Chris. \nChris Martin juga menyampaikan ucapan terima kasih kepada penonton dan mengaku senang bisa tampil pertama kali di Indonesia. \n&quot;Terima kasih banyak sudah datang ke sini. Kami sangat senang bisa tampil pertama kali di Indonesia. Kami juga berterima kasih kepada Pemerintah yang sudah memberikan kami kesempatan untuk manggung di sini,&quot; kata Chris Martin.\nBaca juga: Momen-momen Seru di Konser Coldplay di Jakarta\nKOMPAS.com/RODERICK ADRIAN Vokalis Coldplay Chris Martin beraksi dalam konser Music of the Spheres World Tour, di Stadion Utama Gelora Bung Karno, Jakarta, Rabu (15/11/2023). Dalam penampilannya Coldplay membawakan sejumlah lagu hits mereka seperti Higher Power, Paradise, Viva La Vida, hingga Everglow.&quot;Kami sangat mencintai kalian semua. Kalau bisa saya ingin memeluk kalian satu per satu. Terima kasih banyak, banyak cinta untuk kalian,&quot; lanjutnya. \nBahkan, setelah menyanyikan &quot;Hymn For The Weekend&quot;, vokalis berusia 46 tahun itu berkelakar ingin manggung di Jakarta setiap minggu. \n&quot;Kalian sangat luar biasa. Saya sangat senang di sini. Kalau boleh saya bisa manggung setiap minggu di sini,&quot; ujar Chris Martin. \nDalam konser tersebut Coldplay membawakan deretan lagu hitsnya, yaitu, &quot;Higher Power&quot;, &quot;Adventure Of A Lifetime&quot;, &quot;Paradise&quot;, &quot;The Scientist&quot;, &quot;Viva La Vida&quot;, &quot;Everglow&quot;, &quot;In My Place&quot;, &quot;Yellow&quot;, &quot;Boys Don\&#39;t Cry&quot;, &quot;Something Just Like This&quot; hingga &quot;My Universe&quot;.\nBaca juga: BERITA FOTO: Keseruan Konser Coldplay di GBK\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDapatkan informasi dan insight pilihan redaksi Kompas.com&#39;
 </pre></div>
 </div>
 </div>
@@ -910,7 +910,7 @@ Penyimpanan Data</p></li>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-064de332-38e7-43e4-9ac9-6035f37c75bb" class="colab-df-container">
+  <div id="df-b2eb9902-f977-458b-895b-f9f2a550d1ab" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -929,93 +929,93 @@ Penyimpanan Data</p></li>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>akui</th>
+      <th>acara</th>
+      <th>adrian</th>
+      <th>adventure</th>
+      <th>anaknya</th>
+      <th>antusiasme</th>
+      <th>astrini</th>
       <th>baca</th>
-      <th>bahri</th>
-      <th>bergeser</th>
-      <th>berlanjut</th>
-      <th>berproses</th>
-      <th>bertahap</th>
-      <th>bidang</th>
-      <th>bina</th>
-      <th>budi</th>
+      <th>bahagia</th>
+      <th>band</th>
+      <th>beraksi</th>
       <th>...</th>
-      <th>tersedia</th>
-      <th>terus</th>
-      <th>tim</th>
-      <th>tinggal</th>
-      <th>titik</th>
-      <th>tugas</th>
-      <th>udara</th>
-      <th>utilitas</th>
-      <th>walter</th>
-      <th>wilayah</th>
+      <th>tour</th>
+      <th>ucapan</th>
+      <th>universe</th>
+      <th>utama</th>
+      <th>vida</th>
+      <th>viva</th>
+      <th>vokalis</th>
+      <th>weekend</th>
+      <th>world</th>
+      <th>yellow</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.130914</td>
+      <td>0.243498</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.166386</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.166386</td>
       <td>0.000000</td>
-      <td>0.119495</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.475730</td>
+      <td>0.208049</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.208049</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.208049</td>
+      <td>0.000000</td>
+      <td>0.208049</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1027,21 +1027,21 @@ Penyimpanan Data</p></li>
     </tr>
     <tr>
       <th>3</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.00000</td>
       <td>0.000000</td>
-      <td>0.630469</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1051,143 +1051,143 @@ Penyimpanan Data</p></li>
     </tr>
     <tr>
       <th>4</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.500193</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
       <td>0.000000</td>
       <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.393556</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>5</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
       <td>0.000000</td>
       <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
       <td>0.000000</td>
-      <td>0.236060</td>
       <td>0.000000</td>
-      <td>0.258619</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.256221</td>
-      <td>0.224268</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.256221</td>
-      <td>...</td>
-      <td>0.000000</td>
       <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.403194</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.482375</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>7</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
       <td>0.000000</td>
       <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.482283</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>8</th>
+      <td>0.00000</td>
+      <td>0.179230</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.385925</td>
+      <td>0.201959</td>
+      <td>0.201959</td>
+      <td>0.00000</td>
+      <td>0.163103</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
+      <td>0.163103</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.163103</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.163103</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>9</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.48276</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.235781</td>
+      <td>0.235781</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1195,19 +1195,19 @@ Penyimpanan Data</p></li>
     </tr>
     <tr>
       <th>10</th>
+      <td>0.45136</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.45136</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1219,67 +1219,67 @@ Penyimpanan Data</p></li>
     </tr>
     <tr>
       <th>11</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.291875</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.291875</td>
-      <td>0.229649</td>
-      <td>0.000000</td>
-      <td>...</td>
       <td>0.000000</td>
       <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
       <td>0.000000</td>
-      <td>0.209617</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.000000</td>
-      <td>0.193374</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.193374</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
-      <td>0.220925</td>
-      <td>0.00000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.193374</td>
+      <td>0.373642</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.220925</td>
-      <td>0.173826</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>13</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.310668</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1291,43 +1291,43 @@ Penyimpanan Data</p></li>
     </tr>
     <tr>
       <th>14</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.234031</td>
-      <td>0.000000</td>
-      <td>...</td>
       <td>0.000000</td>
       <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.234031</td>
-      <td>0.213617</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>15</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1339,19 +1339,67 @@ Penyimpanan Data</p></li>
     </tr>
     <tr>
       <th>16</th>
+      <td>0.00000</td>
+      <td>0.203862</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.185519</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229716</td>
+      <td>...</td>
+      <td>0.185519</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.185519</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.185519</td>
+      <td>0.000000</td>
+      <td>0.185519</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.812236</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.245477</td>
+      <td>0.245477</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>18</th>
       <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1362,20 +1410,164 @@ Penyimpanan Data</p></li>
       <td>0.000000</td>
     </tr>
     <tr>
-      <th>17</th>
+      <th>19</th>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>20</th>
       <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.269898</td>
+      <td>0.334196</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.189761</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.189761</td>
+      <td>0.000000</td>
+      <td>0.153251</td>
+      <td>0.153251</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.189761</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.236662</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1387,12 +1579,12 @@ Penyimpanan Data</p></li>
     </tr>
   </tbody>
 </table>
-<p>18 rows × 95 columns</p>
+<p>26 rows × 136 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-064de332-38e7-43e4-9ac9-6035f37c75bb')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b2eb9902-f977-458b-895b-f9f2a550d1ab')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1444,12 +1636,12 @@ Penyimpanan Data</p></li>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-064de332-38e7-43e4-9ac9-6035f37c75bb button.colab-df-convert');
+        document.querySelector('#df-b2eb9902-f977-458b-895b-f9f2a550d1ab button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-064de332-38e7-43e4-9ac9-6035f37c75bb');
+        const element = document.querySelector('#df-b2eb9902-f977-458b-895b-f9f2a550d1ab');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1469,8 +1661,8 @@ Penyimpanan Data</p></li>
   </div>
 
 
-<div id="df-ffa7cb70-32a7-4d78-afe2-b76971634756">
-  <button class="colab-df-quickchart" onclick="quickchart('df-ffa7cb70-32a7-4d78-afe2-b76971634756')"
+<div id="df-0f660d4b-c37b-4a5a-b5a3-87713d3a6c67">
+  <button class="colab-df-quickchart" onclick="quickchart('df-0f660d4b-c37b-4a5a-b5a3-87713d3a6c67')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1589,7 +1781,7 @@ Penyimpanan Data</p></li>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-ffa7cb70-32a7-4d78-afe2-b76971634756 button');
+        document.querySelector('#df-0f660d4b-c37b-4a5a-b5a3-87713d3a6c67 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1618,7 +1810,7 @@ Penyimpanan Data</p></li>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-457a29ba-a380-4ff3-b55e-cd3ed33d3856" class="colab-df-container">
+  <div id="df-ec7b10b3-d0d3-4020-9a98-bc3703f49c4c" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1647,402 +1839,652 @@ Penyimpanan Data</p></li>
       <th>7</th>
       <th>8</th>
       <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
-      <th>14</th>
-      <th>15</th>
+      <th>...</th>
       <th>16</th>
       <th>17</th>
+      <th>18</th>
+      <th>19</th>
+      <th>20</th>
+      <th>21</th>
+      <th>22</th>
+      <th>23</th>
+      <th>24</th>
+      <th>25</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>1.000000</td>
-      <td>0.055984</td>
-      <td>0.291273</td>
-      <td>0.108211</td>
-      <td>0.031446</td>
-      <td>0.290086</td>
-      <td>0.213201</td>
-      <td>0.166489</td>
-      <td>0.027719</td>
+      <td>0.111710</td>
+      <td>0.179270</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.122519</td>
+      <td>0.075810</td>
+      <td>0.235482</td>
+      <td>0.120405</td>
+      <td>0.026906</td>
+      <td>...</td>
+      <td>0.236566</td>
+      <td>0.028012</td>
+      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.030378</td>
-      <td>0.302769</td>
-      <td>0.308137</td>
+      <td>0.092397</td>
+      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.296905</td>
-      <td>0.039369</td>
-      <td>0.000000</td>
-      <td>0.15238</td>
+      <td>0.108834</td>
+      <td>0.017488</td>
+      <td>0.179077</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.055984</td>
+      <td>0.111710</td>
       <td>1.000000</td>
+      <td>0.063221</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.129621</td>
+      <td>0.080204</td>
+      <td>0.083044</td>
+      <td>0.429423</td>
       <td>0.000000</td>
+      <td>...</td>
+      <td>0.587631</td>
       <td>0.000000</td>
+      <td>0.0</td>
       <td>0.000000</td>
+      <td>0.130328</td>
+      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.166328</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.115143</td>
+      <td>0.074414</td>
+      <td>0.036470</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.291273</td>
-      <td>0.000000</td>
+      <td>0.179270</td>
+      <td>0.063221</td>
       <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.209022</td>
+      <td>0.049563</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.112749</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.082015</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.108211</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>1.000000</td>
       <td>0.000000</td>
-      <td>0.106885</td>
-      <td>0.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.071841</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.00000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.031446</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>1.000000</td>
-      <td>0.163902</td>
-      <td>0.096848</td>
-      <td>0.000000</td>
-      <td>0.083329</td>
-      <td>0.000000</td>
-      <td>0.091323</td>
-      <td>0.000000</td>
-      <td>0.068410</td>
+      <td>0.0</td>
+      <td>1.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.290086</td>
+      <td>0.122519</td>
+      <td>0.129621</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.106885</td>
-      <td>0.163902</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.000000</td>
-      <td>0.198476</td>
-      <td>0.121712</td>
-      <td>0.054758</td>
-      <td>0.035903</td>
-      <td>0.131884</td>
-      <td>0.130581</td>
-      <td>0.171231</td>
-      <td>0.086320</td>
-      <td>0.146429</td>
-      <td>0.028425</td>
+      <td>0.242712</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.115584</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.348442</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.213201</td>
+      <td>0.075810</td>
+      <td>0.080204</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.096848</td>
-      <td>0.198476</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.242712</td>
       <td>1.000000</td>
-      <td>0.417520</td>
-      <td>0.085370</td>
-      <td>0.027987</td>
-      <td>0.149585</td>
-      <td>0.016921</td>
-      <td>0.210501</td>
-      <td>0.018010</td>
-      <td>0.260196</td>
-      <td>0.082784</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.071519</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.215603</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.166489</td>
+      <td>0.235482</td>
+      <td>0.083044</td>
+      <td>0.209022</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.121712</td>
-      <td>0.417520</td>
       <td>1.000000</td>
+      <td>0.065103</td>
       <td>0.000000</td>
-      <td>0.066954</td>
-      <td>0.134032</td>
-      <td>0.040480</td>
-      <td>0.141171</td>
-      <td>0.043087</td>
-      <td>0.371824</td>
-      <td>0.053009</td>
+      <td>...</td>
+      <td>0.148102</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.107731</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.027719</td>
+      <td>0.120405</td>
+      <td>0.429423</td>
+      <td>0.049563</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.083329</td>
-      <td>0.054758</td>
-      <td>0.085370</td>
-      <td>0.000000</td>
+      <td>0.065103</td>
       <td>1.000000</td>
+      <td>0.044632</td>
+      <td>...</td>
+      <td>0.644671</td>
+      <td>0.046467</td>
+      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.080499</td>
-      <td>0.000000</td>
-      <td>0.074628</td>
-      <td>0.000000</td>
+      <td>0.058152</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.105862</td>
+      <td>0.173488</td>
     </tr>
     <tr>
       <th>9</th>
+      <td>0.026906</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.035903</td>
-      <td>0.027987</td>
-      <td>0.066954</td>
-      <td>0.000000</td>
+      <td>0.044632</td>
       <td>1.000000</td>
-      <td>0.105561</td>
-      <td>0.031882</td>
-      <td>0.187554</td>
-      <td>0.033934</td>
-      <td>0.032490</td>
-      <td>0.041749</td>
+      <td>...</td>
+      <td>0.050766</td>
+      <td>0.694276</td>
+      <td>0.0</td>
+      <td>0.155534</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.346171</td>
+      <td>0.032380</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.030378</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.091323</td>
-      <td>0.131884</td>
-      <td>0.149585</td>
-      <td>0.134032</td>
-      <td>0.080499</td>
-      <td>0.105561</td>
-      <td>1.000000</td>
-      <td>0.063822</td>
-      <td>0.048308</td>
-      <td>0.067931</td>
-      <td>0.065040</td>
-      <td>0.083575</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.119726</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.240457</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>0.302769</td>
+      <td>0.035919</td>
+      <td>0.038001</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.114998</td>
+      <td>0.071156</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
+      <td>0.033886</td>
       <td>0.000000</td>
-      <td>0.130581</td>
-      <td>0.016921</td>
-      <td>0.040480</td>
+      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.031882</td>
-      <td>0.063822</td>
-      <td>1.000000</td>
-      <td>0.094428</td>
-      <td>0.123420</td>
-      <td>0.324180</td>
-      <td>0.025241</td>
-      <td>0.122276</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.102153</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.308137</td>
-      <td>0.166328</td>
+      <td>0.177402</td>
+      <td>0.062125</td>
       <td>0.000000</td>
-      <td>0.071841</td>
-      <td>0.068410</td>
-      <td>0.171231</td>
-      <td>0.210501</td>
-      <td>0.141171</td>
-      <td>0.074628</td>
-      <td>0.187554</td>
-      <td>0.048308</td>
-      <td>0.094428</td>
-      <td>1.000000</td>
-      <td>0.015529</td>
-      <td>0.093333</td>
-      <td>0.019106</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.188002</td>
+      <td>0.233883</td>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.099111</td>
+      <td>...</td>
+      <td>0.055398</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.199054</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.203096</td>
+      <td>0.167004</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>13</th>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.086320</td>
-      <td>0.018010</td>
-      <td>0.043087</td>
       <td>0.000000</td>
-      <td>0.033934</td>
-      <td>0.067931</td>
-      <td>0.123420</td>
-      <td>0.015529</td>
-      <td>1.000000</td>
-      <td>0.068569</td>
-      <td>0.026867</td>
-      <td>0.130149</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.203673</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.409058</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.503977</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.296905</td>
+      <td>0.196650</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.194784</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
       <td>0.000000</td>
-      <td>0.146429</td>
-      <td>0.260196</td>
-      <td>0.371824</td>
       <td>0.000000</td>
-      <td>0.032490</td>
-      <td>0.065040</td>
-      <td>0.324180</td>
-      <td>0.093333</td>
-      <td>0.068569</td>
-      <td>1.000000</td>
-      <td>0.025723</td>
-      <td>0.124609</td>
-      <td>0.00000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.336525</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>0.039369</td>
+      <td>0.072315</td>
+      <td>0.076507</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.231523</td>
+      <td>0.143257</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.057155</td>
+      <td>...</td>
+      <td>0.068222</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.114789</td>
+      <td>0.100296</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.413492</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.028425</td>
-      <td>0.082784</td>
-      <td>0.053009</td>
-      <td>0.000000</td>
-      <td>0.041749</td>
-      <td>0.083575</td>
-      <td>0.025241</td>
-      <td>0.019106</td>
-      <td>0.026867</td>
-      <td>0.025723</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.122276</td>
-      <td>0.000000</td>
-      <td>0.130149</td>
-      <td>0.124609</td>
-      <td>0.000000</td>
+      <td>0.236566</td>
+      <td>0.587631</td>
+      <td>0.112749</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.115584</td>
+      <td>0.071519</td>
+      <td>0.148102</td>
+      <td>0.644671</td>
+      <td>0.050766</td>
+      <td>...</td>
       <td>1.000000</td>
-      <td>0.00000</td>
+      <td>0.052854</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.145271</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.102674</td>
+      <td>0.120411</td>
+      <td>0.197332</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>0.152380</td>
+      <td>0.028012</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.046467</td>
+      <td>0.694276</td>
+      <td>...</td>
+      <td>0.052854</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.360408</td>
+      <td>0.033712</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.155534</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.092397</td>
+      <td>0.130328</td>
+      <td>0.082015</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.107731</td>
+      <td>0.058152</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.145271</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.333216</td>
+      <td>0.030637</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>...</td>
       <td>0.000000</td>
-      <td>1.00000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.108834</td>
+      <td>0.115143</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.348442</td>
+      <td>0.215603</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.102674</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.333216</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0.017488</td>
+      <td>0.074414</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.105862</td>
+      <td>0.346171</td>
+      <td>...</td>
+      <td>0.120411</td>
+      <td>0.360408</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.030637</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.047911</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>0.179077</td>
+      <td>0.036470</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.173488</td>
+      <td>0.032380</td>
+      <td>...</td>
+      <td>0.197332</td>
+      <td>0.033712</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.047911</td>
+      <td>1.000000</td>
     </tr>
   </tbody>
 </table>
+<p>26 rows × 26 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-457a29ba-a380-4ff3-b55e-cd3ed33d3856')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ec7b10b3-d0d3-4020-9a98-bc3703f49c4c')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2094,12 +2536,12 @@ Penyimpanan Data</p></li>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-457a29ba-a380-4ff3-b55e-cd3ed33d3856 button.colab-df-convert');
+        document.querySelector('#df-ec7b10b3-d0d3-4020-9a98-bc3703f49c4c button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-457a29ba-a380-4ff3-b55e-cd3ed33d3856');
+        const element = document.querySelector('#df-ec7b10b3-d0d3-4020-9a98-bc3703f49c4c');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2119,8 +2561,8 @@ Penyimpanan Data</p></li>
   </div>
 
 
-<div id="df-ae5cebe0-b393-4ab6-9c5f-351656d98519">
-  <button class="colab-df-quickchart" onclick="quickchart('df-ae5cebe0-b393-4ab6-9c5f-351656d98519')"
+<div id="df-25a6ae7a-7b67-463b-a8b1-3904c30c16a5">
+  <button class="colab-df-quickchart" onclick="quickchart('df-25a6ae7a-7b67-463b-a8b1-3904c30c16a5')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2239,7 +2681,7 @@ Penyimpanan Data</p></li>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-ae5cebe0-b393-4ab6-9c5f-351656d98519 button');
+        document.querySelector('#df-25a6ae7a-7b67-463b-a8b1-3904c30c16a5 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2285,7 +2727,7 @@ Penyimpanan Data</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3af76b0f38300ed7a4adfd292dd918ea921d07f0d63395966e7bca707a422cee.png" src="../_images/3af76b0f38300ed7a4adfd292dd918ea921d07f0d63395966e7bca707a422cee.png" />
+<img alt="../_images/d01e081cef8e705da90d68d0088447851d72b8b3cfa41fb9cefb2564328e24be.png" src="../_images/d01e081cef8e705da90d68d0088447851d72b8b3cfa41fb9cefb2564328e24be.png" />
 </div>
 </div>
 </section>
@@ -2311,7 +2753,7 @@ Rumus Perhitungan Closeness Centrality:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-736cf669-71de-4ade-a0ff-8422de531283" class="colab-df-container">
+  <div id="df-ab826a66-b05c-4408-b1b9-a2a8aa5460ac" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2338,91 +2780,131 @@ Rumus Perhitungan Closeness Centrality:</p>
     <tr>
       <th>0</th>
       <td>0</td>
-      <td>0.630252</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5</td>
-      <td>0.630252</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>6</td>
-      <td>0.529412</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>7</td>
-      <td>0.529412</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>14</td>
-      <td>0.509050</td>
+      <td>0.518824</td>
     </tr>
     <tr>
       <th>12</th>
       <td>12</td>
-      <td>0.509050</td>
+      <td>0.518824</td>
     </tr>
     <tr>
-      <th>11</th>
-      <td>11</td>
-      <td>0.490196</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>10</td>
-      <td>0.426945</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>0.413603</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>17</td>
-      <td>0.378151</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>0.378151</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>0.378151</td>
+      <th>23</th>
+      <td>23</td>
+      <td>0.504000</td>
     </tr>
     <tr>
       <th>16</th>
       <td>16</td>
-      <td>0.357711</td>
+      <td>0.490000</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>9</td>
-      <td>0.348297</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0.330882</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>13</td>
-      <td>0.330882</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>8</td>
-      <td>0.000000</td>
+      <th>5</th>
+      <td>5</td>
+      <td>0.490000</td>
     </tr>
     <tr>
       <th>15</th>
       <td>15</td>
+      <td>0.441000</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>0.420000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.420000</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>0.410233</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>0.400909</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>0.400909</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>0.400909</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>0.400909</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>0.392000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>0.383478</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>0.383478</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>0.367500</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.367500</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>0.360000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>0.360000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>0.326667</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>0.309474</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
       <td>0.000000</td>
     </tr>
   </tbody>
@@ -2431,7 +2913,7 @@ Rumus Perhitungan Closeness Centrality:</p>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-736cf669-71de-4ade-a0ff-8422de531283')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ab826a66-b05c-4408-b1b9-a2a8aa5460ac')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2483,12 +2965,12 @@ Rumus Perhitungan Closeness Centrality:</p>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-736cf669-71de-4ade-a0ff-8422de531283 button.colab-df-convert');
+        document.querySelector('#df-ab826a66-b05c-4408-b1b9-a2a8aa5460ac button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-736cf669-71de-4ade-a0ff-8422de531283');
+        const element = document.querySelector('#df-ab826a66-b05c-4408-b1b9-a2a8aa5460ac');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2508,8 +2990,8 @@ Rumus Perhitungan Closeness Centrality:</p>
   </div>
 
 
-<div id="df-ed9aefe3-41db-44de-b802-e1f7ad4388c1">
-  <button class="colab-df-quickchart" onclick="quickchart('df-ed9aefe3-41db-44de-b802-e1f7ad4388c1')"
+<div id="df-7d2789a5-8dfe-4639-a5db-f6fdd13b3adc">
+  <button class="colab-df-quickchart" onclick="quickchart('df-7d2789a5-8dfe-4639-a5db-f6fdd13b3adc')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2628,7 +3110,7 @@ Rumus Perhitungan Closeness Centrality:</p>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-ed9aefe3-41db-44de-b802-e1f7ad4388c1 button');
+        document.querySelector('#df-7d2789a5-8dfe-4639-a5db-f6fdd13b3adc button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2655,12 +3137,11 @@ Rumus Perhitungan Closeness Centrality:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Node Preprocessing 0: Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Node Preprocessing 0: Chris Martin Singgung Kemacetan Jakarta
 Tim Redaksi
-JAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.
-Node Node Preprocessing 5: Namun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.
-Node Node Preprocessing 6: Baca juga: Heru Budi Akui Sulit Rapikan Kabel Semrawut di Udara ke Bawah Tanah
-Menurut Heru, proses pemindahan ke SJUT itu terus dilakukan setiap hari sampai tidak ada lagi kabel semrawut di udara.
+JAKARTA, KOMPAS.com - Band Coldplay ikut merasakan kemacetan Kota Jakarta saat pertama kali ke Indonesia.
+Node Node Preprocessing 12: Chris Martin juga menyampaikan ucapan terima kasih kepada penonton dan mengaku senang bisa tampil pertama kali di Indonesia.
+Node Node Preprocessing 23: Saya sangat senang di sini.
 </pre></div>
 </div>
 </div>
@@ -2697,7 +3178,7 @@ $<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d03aab56-0b09-401d-81df-02ca1d13275d" class="colab-df-container">
+  <div id="df-e332d46c-4203-4775-993c-2e71b3c6c015" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2722,94 +3203,134 @@ $<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>0.156889</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5</td>
-      <td>0.110333</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>14</td>
-      <td>0.105601</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>6</td>
-      <td>0.099473</td>
+      <th>16</th>
+      <td>16</td>
+      <td>0.080798</td>
     </tr>
     <tr>
       <th>12</th>
       <td>12</td>
-      <td>0.093095</td>
+      <td>0.075970</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>7</td>
-      <td>0.092547</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>11</td>
-      <td>0.077412</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>10</td>
-      <td>0.043110</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>16</td>
-      <td>0.036821</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>9</td>
-      <td>0.029152</td>
+      <th>23</th>
+      <td>23</td>
+      <td>0.065561</td>
     </tr>
     <tr>
       <th>13</th>
       <td>13</td>
-      <td>0.028102</td>
+      <td>0.060866</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>0.027443</td>
+      <th>0</th>
+      <td>0</td>
+      <td>0.058958</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>0.022839</td>
+      <th>9</th>
+      <td>9</td>
+      <td>0.053334</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>0.052513</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
-      <td>0.020310</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>0.019722</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>17</td>
-      <td>0.018745</td>
+      <td>0.050648</td>
     </tr>
     <tr>
       <th>8</th>
       <td>8</td>
-      <td>0.009202</td>
+      <td>0.050344</td>
     </tr>
     <tr>
       <th>15</th>
       <td>15</td>
-      <td>0.009202</td>
+      <td>0.045809</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>0.044665</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>0.039017</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>0.038757</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>0.036289</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>0.035917</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>0.034727</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>0.031017</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>0.030352</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>0.029462</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.022710</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>0.022676</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>0.013060</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.006637</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.006637</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>0.006637</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>0.006637</td>
     </tr>
   </tbody>
 </table>
@@ -2817,7 +3338,7 @@ $<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-d03aab56-0b09-401d-81df-02ca1d13275d')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e332d46c-4203-4775-993c-2e71b3c6c015')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2869,12 +3390,12 @@ $<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{
 
     <script>
       const buttonEl =
-        document.querySelector('#df-d03aab56-0b09-401d-81df-02ca1d13275d button.colab-df-convert');
+        document.querySelector('#df-e332d46c-4203-4775-993c-2e71b3c6c015 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-d03aab56-0b09-401d-81df-02ca1d13275d');
+        const element = document.querySelector('#df-e332d46c-4203-4775-993c-2e71b3c6c015');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2894,8 +3415,8 @@ $<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{
   </div>
 
 
-<div id="df-ec0acc93-9f8a-4d52-9ef1-0089dd1e9ae4">
-  <button class="colab-df-quickchart" onclick="quickchart('df-ec0acc93-9f8a-4d52-9ef1-0089dd1e9ae4')"
+<div id="df-9565c974-1997-4148-8923-dd077088b736">
+  <button class="colab-df-quickchart" onclick="quickchart('df-9565c974-1997-4148-8923-dd077088b736')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3014,7 +3535,7 @@ $<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-ec0acc93-9f8a-4d52-9ef1-0089dd1e9ae4 button');
+        document.querySelector('#df-9565c974-1997-4148-8923-dd077088b736 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -3041,11 +3562,10 @@ $<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 0: Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen 
-Tim Redaksi
-JAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.
-Node 5: Namun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.
-Node 14: Samsul mengatakan, Dinas Bina Marga DKI telah memerintahkan agar perusahaan pemilik kabel utilitas memindahkan kabel di udara ke bawah tanah atau SJUT yang sudah terbangun.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 16: Baca juga: Momen-momen Seru di Konser Coldplay di Jakarta
+KOMPAS.com/RODERICK ADRIAN Vokalis Coldplay Chris Martin beraksi dalam konser Music of the Spheres World Tour, di Stadion Utama Gelora Bung Karno, Jakarta, Rabu (15/11/2023).
+Node 12: Chris Martin juga menyampaikan ucapan terima kasih kepada penonton dan mengaku senang bisa tampil pertama kali di Indonesia.
+Node 23: Saya sangat senang di sini.
 </pre></div>
 </div>
 </div>
@@ -3078,7 +3598,7 @@ $<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b9df653d-fd76-4029-a368-c3168d5e5b92" class="colab-df-container">
+  <div id="df-e180073d-ea66-46eb-9451-d716a2e14199" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3103,94 +3623,134 @@ $<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}
   </thead>
   <tbody>
     <tr>
-      <th>5</th>
-      <td>5</td>
-      <td>4.336249e-01</td>
+      <th>23</th>
+      <td>23</td>
+      <td>3.597098e-01</td>
     </tr>
     <tr>
       <th>0</th>
       <td>0</td>
-      <td>4.108247e-01</td>
+      <td>3.528884e-01</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>6</td>
-      <td>3.642476e-01</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>7</td>
-      <td>3.642476e-01</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>14</td>
-      <td>3.385607e-01</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>12</td>
-      <td>3.023012e-01</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>11</td>
-      <td>2.388105e-01</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>10</td>
-      <td>2.206596e-01</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>1.485782e-01</td>
+      <th>5</th>
+      <td>5</td>
+      <td>3.327743e-01</td>
     </tr>
     <tr>
       <th>16</th>
       <td>16</td>
-      <td>1.124628e-01</td>
+      <td>3.299490e-01</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>9</td>
-      <td>9.201250e-02</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>7.629482e-02</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>7.228333e-02</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>17</td>
-      <td>7.228333e-02</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>13</td>
-      <td>6.180673e-02</td>
+      <th>12</th>
+      <td>12</td>
+      <td>3.241979e-01</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
-      <td>5.318851e-02</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>8</td>
-      <td>1.253952e-13</td>
+      <td>2.645868e-01</td>
     </tr>
     <tr>
       <th>15</th>
       <td>15</td>
-      <td>1.253952e-13</td>
+      <td>2.596958e-01</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>2.145504e-01</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>2.058069e-01</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>1.759210e-01</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>1.527652e-01</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>1.498928e-01</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>1.483843e-01</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>1.376246e-01</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>1.293166e-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1.258297e-01</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>1.042786e-01</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>1.036360e-01</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>9.373707e-02</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>9.150515e-02</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>7.649236e-02</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>2.529830e-02</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2.627584e-24</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>2.627584e-24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>2.627584e-24</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>2.627584e-24</td>
     </tr>
   </tbody>
 </table>
@@ -3198,7 +3758,7 @@ $<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b9df653d-fd76-4029-a368-c3168d5e5b92')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e180073d-ea66-46eb-9451-d716a2e14199')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -3250,12 +3810,12 @@ $<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-b9df653d-fd76-4029-a368-c3168d5e5b92 button.colab-df-convert');
+        document.querySelector('#df-e180073d-ea66-46eb-9451-d716a2e14199 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b9df653d-fd76-4029-a368-c3168d5e5b92');
+        const element = document.querySelector('#df-e180073d-ea66-46eb-9451-d716a2e14199');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3275,8 +3835,8 @@ $<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}
   </div>
 
 
-<div id="df-60204785-af8a-4b55-a9da-fc9b7d3549aa">
-  <button class="colab-df-quickchart" onclick="quickchart('df-60204785-af8a-4b55-a9da-fc9b7d3549aa')"
+<div id="df-57e20b52-9fc3-4647-8a33-23a520709207">
+  <button class="colab-df-quickchart" onclick="quickchart('df-57e20b52-9fc3-4647-8a33-23a520709207')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3395,7 +3955,7 @@ $<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-60204785-af8a-4b55-a9da-fc9b7d3549aa button');
+        document.querySelector('#df-57e20b52-9fc3-4647-8a33-23a520709207 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -3420,12 +3980,11 @@ $<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 5: Namun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.
-Node 0: Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 23: Saya sangat senang di sini.
+Node 0: Chris Martin Singgung Kemacetan Jakarta
 Tim Redaksi
-JAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.
-Node 6: Baca juga: Heru Budi Akui Sulit Rapikan Kabel Semrawut di Udara ke Bawah Tanah
-Menurut Heru, proses pemindahan ke SJUT itu terus dilakukan setiap hari sampai tidak ada lagi kabel semrawut di udara.
+JAKARTA, KOMPAS.com - Band Coldplay ikut merasakan kemacetan Kota Jakarta saat pertama kali ke Indonesia.
+Node 5: Kalian tidak sendirian, saya juga merasakannya,&quot; kata Chris Martin.
 </pre></div>
 </div>
 </div>

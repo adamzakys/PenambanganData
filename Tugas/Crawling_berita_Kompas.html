@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas/Crawling_berita_Kompas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="MLP Clasifer" href="MLP_Clasifier.html" />
+    <link rel="prev" title="UAS Penambangan Data" href="UAS_PenambanganData.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Tugas-3.html">Tugas 3 Decision Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PCA-Pendata.html">PCA Pendata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MLP_Clasifier.html">MLP Clasifer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UAS_PenambanganData.html">UAS Penambangan Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Crawling_berita_Kompas</a></li>
 </ul>
 
@@ -377,7 +378,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -393,6 +396,33 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menginstall-dan-mengimport-library-yang-dibutuhkan">Menginstall dan mengimport library yang dibutuhkan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive">Web Scraping Berita Kompas dan Penyimpanan ke Google Drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-dan-membaca-data-csv">Import dan Membaca Data CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis">Mengambil salah satu berita untuk menjadi sampel data yang akan dianalisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-pemrosesan-teks-preprocessing">Pra-pemrosesan Teks / Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-pengukuran-tf-idf">Metode pengukuran TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-kemiripan-kosinus">Perhitungan Kemiripan Kosinus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity">Visualisasi Hubungan Antar Kalimat Menggunakan Graf (Graph) berdasarkan Cosine Similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness">Closeness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-penggunaan-closeness">Hasil penggunaan Closeness</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-peringkat-halaman-dengan-pagerank">Menghitung peringkat halaman dengan Pagerank</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-pagerank">Hasil Pagerank</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-metode-eigenvector-centrality-untuk-menghitung-sentralitas-eigenvector-pada-graf">menggunakan metode eigenvector centrality untuk menghitung sentralitas eigenvector pada graf</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-eigen-vector">Hasil eigen vector</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -409,8 +439,9 @@ document.write(`
 <li><p>NIM : 210411100234</p></li>
 <li><p>Kelas : Penambangan dan Pencarian Web B</p></li>
 </ul>
-<p>##Menginstall dan mengimport library yang dibutuhkan
-Libraries yang Digunakan</p>
+<section id="menginstall-dan-mengimport-library-yang-dibutuhkan">
+<h2>Menginstall dan mengimport library yang dibutuhkan<a class="headerlink" href="#menginstall-dan-mengimport-library-yang-dibutuhkan" title="Permalink to this heading">#</a></h2>
+<p>Libraries yang Digunakan</p>
 <ul class="simple">
 <li><p>BeautifulSoup (bs4): Library untuk melakukan web scraping dan ekstraksi data HTML.</p></li>
 <li><p>Requests: Library untuk membuat permintaan HTTP ke situs web dan mendapatkan konten halaman.</p></li>
@@ -452,8 +483,10 @@ Libraries yang Digunakan</p>
 </div>
 </div>
 </div>
-<p>##Web Scraping Berita Kompas dan Penyimpanan ke Google Drive
-Kode ini menggunakan teknik web scraping untuk mengumpulkan judul dan isi berita dari 200 halaman indeks situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>. Berikut adalah penjelasan komponen utama dari kode tersebut:</p>
+</section>
+<section id="web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive">
+<h2>Web Scraping Berita Kompas dan Penyimpanan ke Google Drive<a class="headerlink" href="#web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive" title="Permalink to this heading">#</a></h2>
+<p>Kode ini menggunakan teknik web scraping untuk mengumpulkan judul dan isi berita dari 200 halaman indeks situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>. Berikut adalah penjelasan komponen utama dari kode tersebut:</p>
 <p><strong>Proses Web Scraping dan menyimpan data</strong></p>
 <ul class="simple">
 <li><p>Iterasi sebanyak 200 halaman indeks(tergantung indeks pada website) di situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>.</p></li>
@@ -472,7 +505,7 @@ Penyimpanan Data</p></li>
 
 <span class="n">csv</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Judul&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;Berita&quot;</span><span class="p">:</span> <span class="p">[]}</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://indeks.kompas.com/?page=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">client</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">page_html</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">content</span>
@@ -502,7 +535,7 @@ Penyimpanan Data</p></li>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-3-9e4d8d4b2cc8&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">&lt;ipython-input-3-e8ef2da1038b&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> 
@@ -540,8 +573,10 @@ Penyimpanan Data</p></li>
 </div>
 </div>
 </div>
-<p>#Import dan Membaca Data CSV
-Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File CSV tersebut berisi data judul dan isi berita dari <a class="reference external" href="http://Kompas.com">Kompas.com</a> yang telah di-web scrape sebelumnya, lalu menampilkan data yang telah dibaca dari file CSV dalam bentuk DataFrame untuk dapat dianalisis lebih lanjut.</p>
+</section>
+<section id="import-dan-membaca-data-csv">
+<h2>Import dan Membaca Data CSV<a class="headerlink" href="#import-dan-membaca-data-csv" title="Permalink to this heading">#</a></h2>
+<p>Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File CSV tersebut berisi data judul dan isi berita dari <a class="reference external" href="http://Kompas.com">Kompas.com</a> yang telah di-web scrape sebelumnya, lalu menampilkan data yang telah dibaca dari file CSV dalam bentuk DataFrame untuk dapat dianalisis lebih lanjut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -557,7 +592,7 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-112f5084-fe8e-4d78-b747-c3ce36f660f7" class="colab-df-container">
+  <div id="df-c5f43078-357c-47e9-a76c-fa5991e8925e" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -583,48 +618,23 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
   <tbody>
     <tr>
       <th>0</th>
-      <td>Berkaca dari Kasus di UNY, Bagaimana Sebaiknya...</td>
-      <td>Berkaca dari Kasus di UNY, Bagaimana Sebaiknya...</td>
+      <td>Pemprov DKI Sebut Pemindahan Kabel ke Bawah Ta...</td>
+      <td>Pemprov DKI Sebut Pemindahan Kabel ke Bawah Ta...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Hadapi Tekanan Inflasi, Bangka Belitung Giatka...</td>
-      <td>Hadapi Tekanan Inflasi, Bangka Belitung Giatka...</td>
+      <td>Elders Rilis Paket Konversi Motor Listrik Mura...</td>
+      <td>Elders Rilis Paket Konversi Motor Listrik Mura...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Tak Ada Kantong Parkir di GBK, Penonton Coldpl...</td>
-      <td>Tak Ada Kantong Parkir di GBK, Penonton Coldpl...</td>
+      <td>Ini Cerita Anak Pedagang Keliling yang Ikut II...</td>
+      <td>Ini Cerita Anak Pedagang Keliling yang Ikut II...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Adu Spesifikasi Oppo Find N3 Vs Samsung Galaxy...</td>
-      <td>Adu Spesifikasi Oppo Find N3 Vs Samsung Galaxy...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>VIDEO: Hoaks Ahok Dilantik Jadi Ketua KPK, Sim...</td>
-      <td>VIDEO: Hoaks Ahok Dilantik Jadi Ketua KPK, Sim...</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Nanti Malam Konser Coldplay, Lalin di Sekitar ...</td>
-      <td>Nanti Malam Konser Coldplay, Lalin di Sekitar ...</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>154 Hektare Hutan Lindung Kaki Gunung Slamet D...</td>
-      <td>154 Hektare Hutan Lindung Kaki Gunung Slamet D...</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Dapat Nomor Urut 2, Gibran: Semua Nomor Bagus Kok</td>
-      <td>Dapat Nomor Urut 2, Gibran: Semua Nomor Bagus ...</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Sinopsis Women From Rote Island, Kisah Pilu Ko...</td>
-      <td>Sinopsis Women From Rote Island, Kisah Pilu Ko...</td>
+      <td>Jadi Korban Penipuan Calo Tiket, Artis Susan S...</td>
+      <td>Jadi Korban Penipuan Calo Tiket, Artis Susan S...</td>
     </tr>
   </tbody>
 </table>
@@ -632,7 +642,7 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-112f5084-fe8e-4d78-b747-c3ce36f660f7')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c5f43078-357c-47e9-a76c-fa5991e8925e')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -684,12 +694,12 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
 
     <script>
       const buttonEl =
-        document.querySelector('#df-112f5084-fe8e-4d78-b747-c3ce36f660f7 button.colab-df-convert');
+        document.querySelector('#df-c5f43078-357c-47e9-a76c-fa5991e8925e button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-112f5084-fe8e-4d78-b747-c3ce36f660f7');
+        const element = document.querySelector('#df-c5f43078-357c-47e9-a76c-fa5991e8925e');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -709,8 +719,8 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
   </div>
 
 
-<div id="df-42ed98d6-5fc9-4278-b832-c4f62aca37df">
-  <button class="colab-df-quickchart" onclick="quickchart('df-42ed98d6-5fc9-4278-b832-c4f62aca37df')"
+<div id="df-4ea516ce-60dd-4df1-b31b-ef18aec821f5">
+  <button class="colab-df-quickchart" onclick="quickchart('df-4ea516ce-60dd-4df1-b31b-ef18aec821f5')"
             title="Suggest charts"
             style="display:none;">
 
@@ -829,7 +839,7 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-42ed98d6-5fc9-4278-b832-c4f62aca37df button');
+        document.querySelector('#df-4ea516ce-60dd-4df1-b31b-ef18aec821f5 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -839,21 +849,25 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
   </div>
 </div></div>
 </div>
-<p>##Mengambil salah satu berita untuk menjadi sampel data yang akan dianalisis</p>
+</section>
+<section id="mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis">
+<h2>Mengambil salah satu berita untuk menjadi sampel data yang akan dianalisis<a class="headerlink" href="#mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Berita</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Berita</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">Berita</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hadapi Tekanan Inflasi, Bangka Belitung Giatkan Tanam Cabai Merah\nTim Redaksi\nBANGKA, KOMPAS.com -\xa0Sebanyak 20 ton cabai merah berhasil dipanen dari dua kelompok tani di Kepulauan Bangka Belitung selama Oktober-November 2023.\nPenanaman cabai tersebut digiatkan untuk memenuhi kebutuhan pangan lokal sekaligus mencegah inflasi.\n&quot;Hasil panen cabai merah tersebut diharapkan dapat meningkatkan jumlah pasokan cabai merah lokal sehingga stabilitas harga cabai merah di Bangka Belitung semakin terjaga,&quot; kata Plt Kepala Perwakilan Bank Indonesia (BI) Kepulauan Bangka Belitung Agus Taufik pada awak media di Pangkalpinang, Rabu (15/11/2023).\nAgus menuturkan, pada pekan kedua November 2023 rata-rata harga cabai merah di pasar tradisional Pangkalpinang sebesar Rp75.000 per kilogram Sedangkan di Tanjungpandan sebesar Rp 93.000 per kilogram.\n&quot;BI Babel bersinergi dengan Pemerintah Daerah akan terus mendorong produktivitas pangan lokal untuk mendukung program kemandirian pangan, antara lain komoditas cabai merah, cabai rawit, bawang merah, sayur mayur, padi, dan ikan budi daya,&quot; ujar Agus.\nBaca juga: Program Smart Precision Farming Dukung Ketahanan Pangan\nPanen cabai tersebut berasal dari Kelompok Tani (Poktan) Pelita yang berlokasi di Bangka dan Gabungan Kelompok Petani (Gapoktan) Mufakat di Belitung Timur.\nPoktan Pelita yang memiliki lahan di Desa Dalil, Bangka, menghasilkan panen cabai merah sebanyak 5 ton di luas lahan 0,4 hektar.\nSementara itu, Gapoktan Mufakat yang berlokasi di Desa Gantung, Belitung Timur memasuki masa panen pada awal November 2023 dengan total panen cabai merah sebanyak 15 ton di luas lahan 1.5 hektar.\nMenurut Agus, untuk memperkuat sinergi dan inovasi program pengendalian inflasi, Bank Indonesia juga telah bersinergi dengan Pemerintah Provinsi Kepulauan Bangka Belitung menyelenggarakan Harvesting Gerakan Nasional Pengendalian Inflasi Pangan (GNPIP).\nKegiatan tersebut memiliki serangkaian acara yaitu operasi pasar murah, lomba memasak ikan air tawar, farmer’s market, penyerahan Program Sosial Bank Indonesia (PSBI), panen ikan budidaya, layanan penukaran uang kas, serta layanan transaksi dengan menggunakan QRIS (QRIS Experience).\nBaca juga: Buah Sukun Bisa Jadi Alternatif Pangan Pengganti Beras\nTercatat ada 11 komoditas bahan pangan yang telah diinventarisir mengalami defisit, yakni beras, kedelai, kacang tanah, bawang merah, bawang putih, cabai rawit, daging sapi/kerbau, daging ayam ras, telur ayam ras, gula pasir dan minyak goreng.\nJumlah tersebut merujuk prakiraan neraca domestik bulanan yang diterbitkan Dinas Pertanian dan Ketahanan Pangan pada Mei 2023 di Bangka Belitung.\nSaat ini cabai besar total produksinya mencapai 7.396 ton dengan kebutuhan 5.330 ton atau surplus 38,77 persen.\nArtikel ini merupakan bagian dari Lestari KG Media, sebuah inisiatif untuk akselerasi Tujuan Pembangunan Berkelanjutan.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDapatkan informasi dan insight pilihan redaksi Kompas.com&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen \nTim Redaksi\nJAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.\n&quot;Iya untuk titik kawasan itu saja. Sudah 90 persen. Jadi yang di Mampang itu tinggal sedikit. Nanti akan bergeser lagi ke wilayah lain,&quot; ujar Heru saat dikonfirmasi, Kamis (16/11/2023).\nNamun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.\nBaca juga: Heru Budi Akui Sulit Rapikan Kabel Semrawut di Udara ke Bawah Tanah\nMenurut Heru, proses pemindahan ke SJUT itu terus dilakukan setiap hari sampai tidak ada lagi kabel semrawut di udara.\n&quot;Untuk peralihan (kabel udara ke bawah tanah) yang sudah ada SJUT. Karena pindah kan tidak bisa sekaligus pindah, tapi bertahap,&quot; kata Heru.\n&quot;Jadi Jalan terus, karena SJUT itu jalan terus. Lokasi yang belum ada SJUT, nanti itu akan masuk SJUT,&quot; kata Heru lagi.\nKepala Bidang (Kabid) Prasarana dan Sarana Utilitas Dinas Bina Marga DKI Jakarta Samsul Bahri sebelumnya menjelaskan, pembuatan SJUT itu sampai saat ini masih dilakukan.\nBaca juga: Kabel Optik Semrawut di Jakarta Bakal Dipindah ke Bawah Tanah secara Bertahap mulai September 2023\nAdapun 10 titik di kawasan Jakarta Selatan yang sudah tersedia SJUT antara lain di wilayah Mampang Prapatan, Senopati, Jalan Suryo, Walter Mongonsidi, Cikajang, dan Pattimura.\n&quot;Ini masih berlanjut dari penugasan Pemda itu kan ada penugasan ke Jakpro sama Sarana Jaya untuk pembangunan SJUT,&quot; ucap Samsul.\nSamsul mengatakan, Dinas Bina Marga DKI telah memerintahkan agar perusahaan pemilik kabel utilitas memindahkan kabel di udara ke bawah tanah atau SJUT yang sudah terbangun.\n&quot;Dan memang butuh waktu dan proses karena panjang kilometer yang sudah dibangun SJUT itu sekitar 24,5 kilometer. Kan itu masih terus berproses,&quot; ucap Samsul.\n\xa0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDapatkan informasi dan insight pilihan redaksi Kompas.com&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>##Pra-pemrosesan Teks / Preprocessing</p>
+</section>
+<section id="pra-pemrosesan-teks-preprocessing">
+<h2>Pra-pemrosesan Teks / Preprocessing<a class="headerlink" href="#pra-pemrosesan-teks-preprocessing" title="Permalink to this heading">#</a></h2>
 <p>Mengambil teks sebagai input dan melakukan beberapa langkah pra-pemrosesan pada teks dalam bahasa Indonesia. Langkah-langkah tersebut mencakup penghapusan angka, pembersihan karakter khusus, konversi teks ke huruf kecil, penghapusan kata-kata umum (stopwords), dan penggabungan kata-kata yang telah melalui proses sebelumnya. Tujuannya adalah membersihkan dan mempersiapkan teks agar dapat digunakan lebih lanjut dalam analisis atau pemrosesan lanjutan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,8 +892,10 @@ Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File C
 </div>
 </div>
 </div>
-<p>##Metode pengukuran TF-IDF
-Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi matriks numerik menggunakan skema TF-IDF. Matriks ini mencerminkan bobot TF-IDF dari setiap kata dalam setiap kalimat. Setelah transformasi, DataFrame pandas dibuat untuk menyajikan matriks tersebut dengan kata-kata sebagai kolom dan setiap baris mewakili satu kalimat, menunjukkan bobot TF-IDF dari kata-kata tersebut dalam kalimat tersebut.</p>
+</section>
+<section id="metode-pengukuran-tf-idf">
+<h2>Metode pengukuran TF-IDF<a class="headerlink" href="#metode-pengukuran-tf-idf" title="Permalink to this heading">#</a></h2>
+<p>Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi matriks numerik menggunakan skema TF-IDF. Matriks ini mencerminkan bobot TF-IDF dari setiap kata dalam setiap kalimat. Setelah transformasi, DataFrame pandas dibuat untuk menyajikan matriks tersebut dengan kata-kata sebagai kolom dan setiap baris mewakili satu kalimat, menunjukkan bobot TF-IDF dari kata-kata tersebut dalam kalimat tersebut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
@@ -894,7 +910,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-7af957cd-236f-41a1-9df5-09eba33f6ee3" class="colab-df-container">
+  <div id="df-064de332-38e7-43e4-9ac9-6035f37c75bb" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -913,27 +929,27 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>acara</th>
-      <th>agus</th>
-      <th>air</th>
-      <th>akselerasi</th>
-      <th>alternatif</th>
-      <th>artikel</th>
-      <th>awak</th>
-      <th>ayam</th>
-      <th>babel</th>
+      <th>akui</th>
       <th>baca</th>
+      <th>bahri</th>
+      <th>bergeser</th>
+      <th>berlanjut</th>
+      <th>berproses</th>
+      <th>bertahap</th>
+      <th>bidang</th>
+      <th>bina</th>
+      <th>budi</th>
       <th>...</th>
-      <th>tercatat</th>
-      <th>terjaga</th>
+      <th>tersedia</th>
+      <th>terus</th>
       <th>tim</th>
-      <th>timur</th>
-      <th>ton</th>
-      <th>total</th>
-      <th>tradisional</th>
-      <th>transaksi</th>
-      <th>tujuan</th>
-      <th>uang</th>
+      <th>tinggal</th>
+      <th>titik</th>
+      <th>tugas</th>
+      <th>udara</th>
+      <th>utilitas</th>
+      <th>walter</th>
+      <th>wilayah</th>
     </tr>
   </thead>
   <tbody>
@@ -947,17 +963,17 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.130914</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.218156</td>
-      <td>0.000000</td>
-      <td>0.146643</td>
+      <td>0.00000</td>
+      <td>0.166386</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.166386</td>
       <td>0.000000</td>
+      <td>0.119495</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
@@ -975,10 +991,10 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.475730</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -988,18 +1004,18 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
     <tr>
       <th>2</th>
       <td>0.000000</td>
-      <td>0.139857</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.192483</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.192483</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1012,7 +1028,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
     <tr>
       <th>3</th>
       <td>0.000000</td>
-      <td>0.257268</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1023,12 +1039,12 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.630469</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.354074</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1038,7 +1054,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.500193</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1047,6 +1063,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1054,8 +1071,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.393556</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1071,36 +1087,36 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.236060</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.258619</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.000000</td>
-      <td>0.154900</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.256221</td>
+      <td>0.224268</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.213186</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.256221</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.403194</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1116,15 +1132,15 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.199353</td>
+      <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.199353</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.482283</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1137,16 +1153,16 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.385925</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.197297</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1167,11 +1183,11 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.48276</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.251759</td>
-      <td>0.192522</td>
-      <td>0.251759</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1191,7 +1207,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1204,50 +1220,50 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
     <tr>
       <th>11</th>
       <td>0.000000</td>
-      <td>0.157875</td>
+      <td>0.000000</td>
+      <td>0.291875</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.291875</td>
+      <td>0.229649</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.209617</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.169336</td>
       <td>0.000000</td>
-      <td>0.169336</td>
-      <td>0.000000</td>
+      <td>0.193374</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.193374</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
+      <td>0.220925</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.193374</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.169336</td>
-      <td>0.000000</td>
-      <td>0.169336</td>
+      <td>0.220925</td>
+      <td>0.173826</td>
     </tr>
     <tr>
       <th>13</th>
@@ -1255,15 +1271,15 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.153281</td>
+      <td>0.310668</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.306561</td>
       <td>0.000000</td>
-      <td>0.134736</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>...</td>
-      <td>0.153281</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1283,17 +1299,17 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.234031</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.234031</td>
+      <td>0.213617</td>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
@@ -1311,11 +1327,11 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.506314</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1328,17 +1344,17 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.812236</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.607451</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1359,55 +1375,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
       <td>0.000000</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.429286</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.337625</td>
-      <td>0.000000</td>
-      <td>0.337625</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.337625</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1419,12 +1387,12 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
     </tr>
   </tbody>
 </table>
-<p>20 rows × 178 columns</p>
+<p>18 rows × 95 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-7af957cd-236f-41a1-9df5-09eba33f6ee3')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-064de332-38e7-43e4-9ac9-6035f37c75bb')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1476,12 +1444,12 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
 
     <script>
       const buttonEl =
-        document.querySelector('#df-7af957cd-236f-41a1-9df5-09eba33f6ee3 button.colab-df-convert');
+        document.querySelector('#df-064de332-38e7-43e4-9ac9-6035f37c75bb button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-7af957cd-236f-41a1-9df5-09eba33f6ee3');
+        const element = document.querySelector('#df-064de332-38e7-43e4-9ac9-6035f37c75bb');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1501,8 +1469,8 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
   </div>
 
 
-<div id="df-c2858d1b-05f1-4d4b-8dd6-07b8a0ca3d90">
-  <button class="colab-df-quickchart" onclick="quickchart('df-c2858d1b-05f1-4d4b-8dd6-07b8a0ca3d90')"
+<div id="df-ffa7cb70-32a7-4d78-afe2-b76971634756">
+  <button class="colab-df-quickchart" onclick="quickchart('df-ffa7cb70-32a7-4d78-afe2-b76971634756')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1621,7 +1589,7 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-c2858d1b-05f1-4d4b-8dd6-07b8a0ca3d90 button');
+        document.querySelector('#df-ffa7cb70-32a7-4d78-afe2-b76971634756 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1631,8 +1599,10 @@ Mengonversi teks yang sudah melewati tahap pra-pemrosesan menjadi representasi m
   </div>
 </div></div>
 </div>
-<p>##Perhitungan Kemiripan Kosinus
-Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks TF-IDF yang telah dihasilkan sebelumnya. Kemudian, hasil kemiripan kosinus tersebut disimpan dalam DataFrame untuk kemudahan analisis.</p>
+</section>
+<section id="perhitungan-kemiripan-kosinus">
+<h2>Perhitungan Kemiripan Kosinus<a class="headerlink" href="#perhitungan-kemiripan-kosinus" title="Permalink to this heading">#</a></h2>
+<p>Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks TF-IDF yang telah dihasilkan sebelumnya. Kemudian, hasil kemiripan kosinus tersebut disimpan dalam DataFrame untuk kemudahan analisis.</p>
 <p><strong>Rumus Perhitungan Kemiripan Kosinus:</strong></p>
 <ul class="simple">
 <li><p>Untuk dua vektor A dan B, kemiripan kosinus dihitung dengan rumus $<span class="math notranslate nohighlight">\( \text{Similarity}(A, B) = \frac{{A \cdot B}}{{\|A\| \cdot \|B\|}} \)</span>$</p></li>
@@ -1648,7 +1618,7 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-913ea3f4-9f04-4b8b-ae3d-eade6049f16f" class="colab-df-container">
+  <div id="df-457a29ba-a380-4ff3-b55e-cd3ed33d3856" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1685,451 +1655,369 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
       <th>15</th>
       <th>16</th>
       <th>17</th>
-      <th>18</th>
-      <th>19</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>1.000000</td>
-      <td>0.093965</td>
-      <td>0.338517</td>
-      <td>0.090408</td>
+      <td>0.055984</td>
+      <td>0.291273</td>
+      <td>0.108211</td>
+      <td>0.031446</td>
+      <td>0.290086</td>
+      <td>0.213201</td>
+      <td>0.166489</td>
+      <td>0.027719</td>
       <td>0.000000</td>
+      <td>0.030378</td>
+      <td>0.302769</td>
+      <td>0.308137</td>
       <td>0.000000</td>
-      <td>0.108868</td>
-      <td>0.235576</td>
-      <td>0.179200</td>
-      <td>0.150364</td>
+      <td>0.296905</td>
+      <td>0.039369</td>
       <td>0.000000</td>
-      <td>0.182399</td>
-      <td>0.000000</td>
-      <td>0.039138</td>
-      <td>0.129261</td>
-      <td>0.060669</td>
-      <td>0.089078</td>
-      <td>0.062952</td>
-      <td>0.000000</td>
-      <td>0.201183</td>
+      <td>0.15238</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.093965</td>
+      <td>0.055984</td>
       <td>1.000000</td>
-      <td>0.100906</td>
-      <td>0.033110</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.156587</td>
-      <td>0.055655</td>
-      <td>0.027447</td>
-      <td>0.026782</td>
-      <td>0.000000</td>
-      <td>0.138906</td>
-      <td>0.000000</td>
-      <td>0.060898</td>
-      <td>0.045904</td>
-      <td>0.053862</td>
-      <td>0.270477</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.166328</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.338517</td>
-      <td>0.100906</td>
+      <td>0.291273</td>
+      <td>0.000000</td>
       <td>1.000000</td>
-      <td>0.260952</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.223270</td>
-      <td>0.119808</td>
-      <td>0.169020</td>
-      <td>0.189840</td>
-      <td>0.000000</td>
-      <td>0.166614</td>
-      <td>0.055739</td>
-      <td>0.051798</td>
-      <td>0.091239</td>
-      <td>0.080294</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.050213</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.090408</td>
-      <td>0.033110</td>
-      <td>0.260952</td>
+      <td>0.108211</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>1.000000</td>
-      <td>0.171480</td>
       <td>0.000000</td>
-      <td>0.128198</td>
-      <td>0.019385</td>
-      <td>0.060818</td>
-      <td>0.137703</td>
-      <td>0.000000</td>
-      <td>0.040616</td>
-      <td>0.046327</td>
-      <td>0.031761</td>
-      <td>0.000000</td>
-      <td>0.049234</td>
+      <td>0.106885</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.071841</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>0.031446</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.171480</td>
       <td>1.000000</td>
-      <td>0.550965</td>
+      <td>0.163902</td>
+      <td>0.096848</td>
+      <td>0.000000</td>
+      <td>0.083329</td>
+      <td>0.000000</td>
+      <td>0.091323</td>
+      <td>0.000000</td>
+      <td>0.068410</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>5</th>
+      <td>0.290086</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.550965</td>
+      <td>0.106885</td>
+      <td>0.163902</td>
       <td>1.000000</td>
+      <td>0.198476</td>
+      <td>0.121712</td>
+      <td>0.054758</td>
+      <td>0.035903</td>
+      <td>0.131884</td>
+      <td>0.130581</td>
+      <td>0.171231</td>
+      <td>0.086320</td>
+      <td>0.146429</td>
+      <td>0.028425</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.108868</td>
-      <td>0.156587</td>
-      <td>0.223270</td>
-      <td>0.128198</td>
+      <td>0.213201</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.096848</td>
+      <td>0.198476</td>
       <td>1.000000</td>
-      <td>0.086785</td>
-      <td>0.073237</td>
-      <td>0.071464</td>
+      <td>0.417520</td>
+      <td>0.085370</td>
+      <td>0.027987</td>
+      <td>0.149585</td>
+      <td>0.016921</td>
+      <td>0.210501</td>
+      <td>0.018010</td>
+      <td>0.260196</td>
+      <td>0.082784</td>
       <td>0.000000</td>
-      <td>0.156819</td>
-      <td>0.074845</td>
-      <td>0.190495</td>
-      <td>0.050527</td>
-      <td>0.059287</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.235576</td>
-      <td>0.055655</td>
-      <td>0.119808</td>
-      <td>0.019385</td>
+      <td>0.166489</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.086785</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.121712</td>
+      <td>0.417520</td>
       <td>1.000000</td>
-      <td>0.175116</td>
-      <td>0.300606</td>
       <td>0.000000</td>
-      <td>0.083983</td>
-      <td>0.037627</td>
-      <td>0.062514</td>
-      <td>0.133585</td>
-      <td>0.031535</td>
+      <td>0.066954</td>
+      <td>0.134032</td>
+      <td>0.040480</td>
+      <td>0.141171</td>
+      <td>0.043087</td>
+      <td>0.371824</td>
+      <td>0.053009</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.179200</td>
-      <td>0.027447</td>
-      <td>0.169020</td>
-      <td>0.060818</td>
+      <td>0.027719</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.073237</td>
-      <td>0.175116</td>
+      <td>0.000000</td>
+      <td>0.083329</td>
+      <td>0.054758</td>
+      <td>0.085370</td>
+      <td>0.000000</td>
       <td>1.000000</td>
-      <td>0.422965</td>
-      <td>0.258002</td>
-      <td>0.025007</td>
-      <td>0.060861</td>
-      <td>0.026329</td>
-      <td>0.034782</td>
-      <td>0.040813</td>
-      <td>0.119848</td>
-      <td>0.084697</td>
+      <td>0.000000</td>
+      <td>0.080499</td>
+      <td>0.000000</td>
+      <td>0.074628</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.150364</td>
-      <td>0.026782</td>
-      <td>0.189840</td>
-      <td>0.137703</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.071464</td>
-      <td>0.300606</td>
-      <td>0.422965</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.035903</td>
+      <td>0.027987</td>
+      <td>0.066954</td>
+      <td>0.000000</td>
       <td>1.000000</td>
+      <td>0.105561</td>
+      <td>0.031882</td>
+      <td>0.187554</td>
+      <td>0.033934</td>
+      <td>0.032490</td>
+      <td>0.041749</td>
       <td>0.000000</td>
-      <td>0.024402</td>
-      <td>0.043828</td>
-      <td>0.025691</td>
-      <td>0.033941</td>
-      <td>0.167294</td>
-      <td>0.116948</td>
-      <td>0.082647</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>10</th>
+      <td>0.030378</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.258002</td>
-      <td>0.000000</td>
+      <td>0.091323</td>
+      <td>0.131884</td>
+      <td>0.149585</td>
+      <td>0.134032</td>
+      <td>0.080499</td>
+      <td>0.105561</td>
       <td>1.000000</td>
+      <td>0.063822</td>
+      <td>0.048308</td>
+      <td>0.067931</td>
+      <td>0.065040</td>
+      <td>0.083575</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>0.182399</td>
-      <td>0.138906</td>
-      <td>0.166614</td>
-      <td>0.040616</td>
+      <td>0.302769</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.156819</td>
-      <td>0.083983</td>
-      <td>0.025007</td>
-      <td>0.024402</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.130581</td>
+      <td>0.016921</td>
+      <td>0.040480</td>
+      <td>0.000000</td>
+      <td>0.031882</td>
+      <td>0.063822</td>
       <td>1.000000</td>
-      <td>0.065720</td>
-      <td>0.026119</td>
-      <td>0.077246</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.094428</td>
+      <td>0.123420</td>
+      <td>0.324180</td>
+      <td>0.025241</td>
+      <td>0.122276</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>12</th>
+      <td>0.308137</td>
+      <td>0.166328</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.055739</td>
-      <td>0.046327</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.074845</td>
-      <td>0.037627</td>
-      <td>0.060861</td>
-      <td>0.043828</td>
-      <td>0.000000</td>
-      <td>0.065720</td>
+      <td>0.071841</td>
+      <td>0.068410</td>
+      <td>0.171231</td>
+      <td>0.210501</td>
+      <td>0.141171</td>
+      <td>0.074628</td>
+      <td>0.187554</td>
+      <td>0.048308</td>
+      <td>0.094428</td>
       <td>1.000000</td>
+      <td>0.015529</td>
+      <td>0.093333</td>
+      <td>0.019106</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>0.039138</td>
-      <td>0.060898</td>
-      <td>0.051798</td>
-      <td>0.031761</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.190495</td>
-      <td>0.062514</td>
-      <td>0.026329</td>
-      <td>0.025691</td>
       <td>0.000000</td>
-      <td>0.026119</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.086320</td>
+      <td>0.018010</td>
+      <td>0.043087</td>
+      <td>0.000000</td>
+      <td>0.033934</td>
+      <td>0.067931</td>
+      <td>0.123420</td>
+      <td>0.015529</td>
       <td>1.000000</td>
-      <td>0.036329</td>
-      <td>0.021313</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.068569</td>
+      <td>0.026867</td>
+      <td>0.130149</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.129261</td>
-      <td>0.045904</td>
-      <td>0.091239</td>
+      <td>0.296905</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.050527</td>
-      <td>0.133585</td>
-      <td>0.034782</td>
-      <td>0.033941</td>
       <td>0.000000</td>
-      <td>0.077246</td>
+      <td>0.146429</td>
+      <td>0.260196</td>
+      <td>0.371824</td>
       <td>0.000000</td>
-      <td>0.036329</td>
+      <td>0.032490</td>
+      <td>0.065040</td>
+      <td>0.324180</td>
+      <td>0.093333</td>
+      <td>0.068569</td>
       <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.025723</td>
+      <td>0.124609</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>0.060669</td>
-      <td>0.053862</td>
-      <td>0.080294</td>
-      <td>0.049234</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.059287</td>
-      <td>0.031535</td>
-      <td>0.040813</td>
-      <td>0.167294</td>
+      <td>0.039369</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.021313</td>
       <td>0.000000</td>
+      <td>0.028425</td>
+      <td>0.082784</td>
+      <td>0.053009</td>
+      <td>0.000000</td>
+      <td>0.041749</td>
+      <td>0.083575</td>
+      <td>0.025241</td>
+      <td>0.019106</td>
+      <td>0.026867</td>
+      <td>0.025723</td>
       <td>1.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.089078</td>
-      <td>0.270477</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.119848</td>
-      <td>0.116948</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.122276</td>
+      <td>0.000000</td>
+      <td>0.130149</td>
+      <td>0.124609</td>
       <td>0.000000</td>
       <td>1.000000</td>
-      <td>0.260770</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00000</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>0.062952</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.084697</td>
-      <td>0.082647</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.260770</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.050213</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>0.201183</td>
+      <td>0.152380</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -2146,9 +2034,7 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
+      <td>1.00000</td>
     </tr>
   </tbody>
 </table>
@@ -2156,7 +2042,7 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-913ea3f4-9f04-4b8b-ae3d-eade6049f16f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-457a29ba-a380-4ff3-b55e-cd3ed33d3856')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2208,12 +2094,12 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
 
     <script>
       const buttonEl =
-        document.querySelector('#df-913ea3f4-9f04-4b8b-ae3d-eade6049f16f button.colab-df-convert');
+        document.querySelector('#df-457a29ba-a380-4ff3-b55e-cd3ed33d3856 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-913ea3f4-9f04-4b8b-ae3d-eade6049f16f');
+        const element = document.querySelector('#df-457a29ba-a380-4ff3-b55e-cd3ed33d3856');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2233,8 +2119,8 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
   </div>
 
 
-<div id="df-03c1c8fd-789d-4204-b5af-cc805fab17d6">
-  <button class="colab-df-quickchart" onclick="quickchart('df-03c1c8fd-789d-4204-b5af-cc805fab17d6')"
+<div id="df-ae5cebe0-b393-4ab6-9c5f-351656d98519">
+  <button class="colab-df-quickchart" onclick="quickchart('df-ae5cebe0-b393-4ab6-9c5f-351656d98519')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2353,7 +2239,7 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-03c1c8fd-789d-4204-b5af-cc805fab17d6 button');
+        document.querySelector('#df-ae5cebe0-b393-4ab6-9c5f-351656d98519 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2363,8 +2249,10 @@ Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks T
   </div>
 </div></div>
 </div>
-<p>##Visualisasi Hubungan Antar Kalimat Menggunakan Graf (Graph) berdasarkan Cosine Similarity
-Membuat graf yang merepresentasikan hubungan antara kalimat-kalimat berdasarkan nilai cosine similarity. Setiap kalimat direpresentasikan sebagai node, dan garis yang menghubungkan dua node menunjukkan tingkat kemiripan antara kalimat tersebut. Semakin panjang dan tebal garis, semakin tinggi tingkat kemiripan antara dua kalimat. Graf ini membantu memvisualisasikan struktur hubungan antar kalimat dalam teks.</p>
+</section>
+<section id="visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity">
+<h2>Visualisasi Hubungan Antar Kalimat Menggunakan Graf (Graph) berdasarkan Cosine Similarity<a class="headerlink" href="#visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity" title="Permalink to this heading">#</a></h2>
+<p>Membuat graf yang merepresentasikan hubungan antara kalimat-kalimat berdasarkan nilai cosine similarity. Setiap kalimat direpresentasikan sebagai node, dan garis yang menghubungkan dua node menunjukkan tingkat kemiripan antara kalimat tersebut. Semakin panjang dan tebal garis, semakin tinggi tingkat kemiripan antara dua kalimat. Graf ini membantu memvisualisasikan struktur hubungan antar kalimat dalam teks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_preprocessing</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
@@ -2384,12 +2272,12 @@ Membuat graf yang merepresentasikan hubungan antara kalimat-kalimat berdasarkan 
 
 <span class="n">edge_labels</span> <span class="o">=</span> <span class="p">{(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span> <span class="nb">round</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G_preprocessing</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)}</span>
 
-<span class="n">node_size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">node_size</span> <span class="o">=</span> <span class="mi">800</span>
 
-<span class="n">node_color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+<span class="n">node_color</span> <span class="o">=</span> <span class="s1">&#39;salmon&#39;</span>
 <span class="n">edge_color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_preprocessing</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">node_size</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_color</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_color</span><span class="p">)</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">G_preprocessing</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">edge_labels</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2397,12 +2285,1153 @@ Membuat graf yang merepresentasikan hubungan antara kalimat-kalimat berdasarkan 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ffaf6fb1d1e4d7901e6cfd5478acc4fa86e67d98d633920e898e2a7f31ee231a.png" src="../_images/ffaf6fb1d1e4d7901e6cfd5478acc4fa86e67d98d633920e898e2a7f31ee231a.png" />
+<img alt="../_images/3af76b0f38300ed7a4adfd292dd918ea921d07f0d63395966e7bca707a422cee.png" src="../_images/3af76b0f38300ed7a4adfd292dd918ea921d07f0d63395966e7bca707a422cee.png" />
 </div>
 </div>
-<p>##Closeness</p>
+</section>
+<section id="closeness">
+<h2>Closeness<a class="headerlink" href="#closeness" title="Permalink to this heading">#</a></h2>
 <p>Menghitung dan menganalisis Closeness Centrality pada graf G_preprocessing.
 Rumus Perhitungan Closeness Centrality:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung closeness centrality</span>
+<span class="n">closeness_centrality_preprocessing</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G_preprocessing</span><span class="p">)</span>
+
+<span class="c1"># Membuat DataFrame dari nilai Closeness Centrality</span>
+<span class="n">centrality_df_preprocessing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">closeness_centrality_preprocessing</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Closeness Centrality Preprocessing&#39;</span><span class="p">])</span>
+
+<span class="c1"># Mengurutkan DataFrame berdasarkan Closeness Centrality dari yang terbesar</span>
+<span class="n">centrality_df_sorted_preprocessing</span> <span class="o">=</span> <span class="n">centrality_df_preprocessing</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Closeness Centrality Preprocessing&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan tabel Closeness Centrality yang telah diurutkan</span>
+<span class="n">centrality_df_sorted_preprocessing</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-736cf669-71de-4ade-a0ff-8422de531283" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Node</th>
+      <th>Closeness Centrality Preprocessing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.630252</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>0.630252</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>0.529412</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>0.529412</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>0.509050</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>0.509050</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>0.490196</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>0.426945</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.413603</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>0.378151</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.378151</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.378151</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>0.357711</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>0.348297</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.330882</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>0.330882</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-736cf669-71de-4ade-a0ff-8422de531283')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-736cf669-71de-4ade-a0ff-8422de531283 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-736cf669-71de-4ade-a0ff-8422de531283');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-ed9aefe3-41db-44de-b802-e1f7ad4388c1">
+  <button class="colab-df-quickchart" onclick="quickchart('df-ed9aefe3-41db-44de-b802-e1f7ad4388c1')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-ed9aefe3-41db-44de-b802-e1f7ad4388c1 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<section id="hasil-penggunaan-closeness">
+<h3>Hasil penggunaan Closeness<a class="headerlink" href="#hasil-penggunaan-closeness" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil tiga baris teratas dari DataFrame yang sudah diurutkan</span>
+<span class="n">top_three_closeness_preprocessing</span> <span class="o">=</span> <span class="n">centrality_df_sorted_preprocessing</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Mendapatkan indeks node dari tiga baris teratas</span>
+<span class="n">top_node_indices_preprocessing</span> <span class="o">=</span> <span class="n">top_three_closeness_preprocessing</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">]</span>
+
+<span class="c1"># Menampilkan kalimat yang sesuai dengan node-node teratas</span>
+<span class="k">for</span> <span class="n">node_index</span> <span class="ow">in</span> <span class="n">top_node_indices_preprocessing</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node Node Preprocessing </span><span class="si">{</span><span class="n">node_index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">kalimat</span><span class="p">[</span><span class="n">node_index</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Node Preprocessing 0: Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen 
+Tim Redaksi
+JAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.
+Node Node Preprocessing 5: Namun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.
+Node Node Preprocessing 6: Baca juga: Heru Budi Akui Sulit Rapikan Kabel Semrawut di Udara ke Bawah Tanah
+Menurut Heru, proses pemindahan ke SJUT itu terus dilakukan setiap hari sampai tidak ada lagi kabel semrawut di udara.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="menghitung-peringkat-halaman-dengan-pagerank">
+<h2>Menghitung peringkat halaman dengan Pagerank<a class="headerlink" href="#menghitung-peringkat-halaman-dengan-pagerank" title="Permalink to this heading">#</a></h2>
+<p>Rumus Perhitungan Manual PageRank:</p>
+<ul class="simple">
+<li><p>PageRank mengukur pentingnya suatu node dalam sebuah graf berdasarkan seberapa banyak node lain yang mengarah ke node tersebut. Rumusnya adalah sebagai berikut:
+$<span class="math notranslate nohighlight">\(PR(x) = (1 - d) + d \left( \frac{{L(y)}}{{PR(y)}} \right)\)</span>$</p></li>
+<li><p>PR(x) adalah PageRank dari node x.</p></li>
+<li><p>d adalah faktor damping, biasanya diatur sebagai 0,85.</p></li>
+<li><p>PR(y) adalah PageRank dari node yang memiliki tautan ke node y.</p></li>
+<li><p>L(y) adalah jumlah tautan keluar dari node y.</p></li>
+<li><p>Iterasi dilakukan hingga konvergensi atau sejumlah iterasi tertentu. Semakin tinggi nilai PageRank, semakin “penting” node tersebut dalam graf.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung closeness centrality</span>
+<span class="n">pagerank_preprocessing</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G_preprocessing</span><span class="p">)</span>
+
+<span class="c1"># Membuat DataFrame dari nilai Closeness Centrality</span>
+<span class="n">pagerank_df_preprocessing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pagerank_preprocessing</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Page Rank Preprocessing&#39;</span><span class="p">])</span>
+
+<span class="c1"># Mengurutkan DataFrame berdasarkan Closeness Centrality dari yang terbesar</span>
+<span class="n">pagerank_df_sorted_preprocessing</span> <span class="o">=</span> <span class="n">pagerank_df_preprocessing</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Page Rank Preprocessing&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan tabel Closeness Centrality yang telah diurutkan</span>
+<span class="n">pagerank_df_sorted_preprocessing</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-d03aab56-0b09-401d-81df-02ca1d13275d" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Node</th>
+      <th>Page Rank Preprocessing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.156889</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>0.110333</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>0.105601</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>0.099473</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>0.093095</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>0.092547</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>0.077412</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>0.043110</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>0.036821</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>0.029152</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>0.028102</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.027443</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.022839</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.020310</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.019722</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>0.018745</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>0.009202</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>0.009202</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d03aab56-0b09-401d-81df-02ca1d13275d')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-d03aab56-0b09-401d-81df-02ca1d13275d button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-d03aab56-0b09-401d-81df-02ca1d13275d');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-ec0acc93-9f8a-4d52-9ef1-0089dd1e9ae4">
+  <button class="colab-df-quickchart" onclick="quickchart('df-ec0acc93-9f8a-4d52-9ef1-0089dd1e9ae4')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-ec0acc93-9f8a-4d52-9ef1-0089dd1e9ae4 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<section id="hasil-pagerank">
+<h3>Hasil Pagerank<a class="headerlink" href="#hasil-pagerank" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil tiga baris teratas dari DataFrame yang sudah diurutkan</span>
+<span class="n">top_three_pagerank_preprocessing</span> <span class="o">=</span> <span class="n">pagerank_df_sorted_preprocessing</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Mendapatkan indeks node dari tiga baris teratas</span>
+<span class="n">top_node_indices</span> <span class="o">=</span> <span class="n">top_three_pagerank_preprocessing</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">]</span>
+
+<span class="c1"># Menampilkan kalimat yang sesuai dengan node-node teratas</span>
+<span class="k">for</span> <span class="n">node_index</span> <span class="ow">in</span> <span class="n">top_node_indices</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node_index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">kalimat</span><span class="p">[</span><span class="n">node_index</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 0: Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen 
+Tim Redaksi
+JAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.
+Node 5: Namun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.
+Node 14: Samsul mengatakan, Dinas Bina Marga DKI telah memerintahkan agar perusahaan pemilik kabel utilitas memindahkan kabel di udara ke bawah tanah atau SJUT yang sudah terbangun.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="menggunakan-metode-eigenvector-centrality-untuk-menghitung-sentralitas-eigenvector-pada-graf">
+<h2>menggunakan metode eigenvector centrality untuk menghitung sentralitas eigenvector pada graf<a class="headerlink" href="#menggunakan-metode-eigenvector-centrality-untuk-menghitung-sentralitas-eigenvector-pada-graf" title="Permalink to this heading">#</a></h2>
+<p>Rumus Perhitungan Manual Eigenvector Centrality:</p>
+<ul class="simple">
+<li><p>Eigenvector Centrality mengukur pentingnya suatu node dalam suatu graf berdasarkan pada seberapa banyak node lain yang terhubung ke node tersebut. Rumusnya adalah sebagai berikut:
+$<span class="math notranslate nohighlight">\(x_i = \frac{1}{\lambda} \sum_{j=1}^{n} A_{ij} x_j\)</span>$</p></li>
+<li><p>xi adalah eigenvector centrality dari node i</p></li>
+<li><p>Aij adalah elemen matriks ketetanggaan yang menunjukkan apakah ada tautan antara node i dan j</p></li>
+<li><p>λ adalah nilai eigen (eigenvalue) yang sesuai dengan eigenvector yang dicari.</p></li>
+<li><p>Iterasi dilakukan hingga konvergensi atau sejumlah iterasi tertentu. Semakin tinggi nilai eigenvector centrality, semakin “penting” node tersebut dalam graf.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung closeness centrality</span>
+<span class="n">eigenvector_preprocessing</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G_preprocessing</span><span class="p">)</span>
+<span class="c1"># Membuat DataFrame dari nilai Closeness Centrality</span>
+<span class="n">eigenvector_df_preprocessing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">eigenvector_preprocessing</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Eigen Vector Preprocessing&#39;</span><span class="p">])</span>
+<span class="c1"># Mengurutkan DataFrame berdasarkan Closeness Centrality dari yang terbesar</span>
+<span class="n">eigenvector_df_sorted_preprocessing</span> <span class="o">=</span> <span class="n">eigenvector_df_preprocessing</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Eigen Vector Preprocessing&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># Menampilkan tabel Closeness Centrality yang telah diurutkan</span>
+<span class="n">eigenvector_df_sorted_preprocessing</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-b9df653d-fd76-4029-a368-c3168d5e5b92" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Node</th>
+      <th>Eigen Vector Preprocessing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>4.336249e-01</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>4.108247e-01</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>3.642476e-01</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>3.642476e-01</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>3.385607e-01</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>3.023012e-01</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>2.388105e-01</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>2.206596e-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1.485782e-01</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>1.124628e-01</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>9.201250e-02</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>7.629482e-02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>7.228333e-02</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>7.228333e-02</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>6.180673e-02</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>5.318851e-02</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>1.253952e-13</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>1.253952e-13</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b9df653d-fd76-4029-a368-c3168d5e5b92')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-b9df653d-fd76-4029-a368-c3168d5e5b92 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-b9df653d-fd76-4029-a368-c3168d5e5b92');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-60204785-af8a-4b55-a9da-fc9b7d3549aa">
+  <button class="colab-df-quickchart" onclick="quickchart('df-60204785-af8a-4b55-a9da-fc9b7d3549aa')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-60204785-af8a-4b55-a9da-fc9b7d3549aa button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<section id="hasil-eigen-vector">
+<h3>Hasil eigen vector<a class="headerlink" href="#hasil-eigen-vector" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil tiga baris teratas dari DataFrame yang sudah diurutkan</span>
+<span class="n">top_three_eigenvector_preprocessing</span> <span class="o">=</span> <span class="n">eigenvector_df_sorted_preprocessing</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># Mendapatkan indeks node dari tiga baris teratas</span>
+<span class="n">top_node_indices</span> <span class="o">=</span> <span class="n">top_three_eigenvector_preprocessing</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">]</span>
+<span class="c1"># Menampilkan kalimat yang sesuai dengan node-node teratas</span>
+<span class="k">for</span> <span class="n">node_index</span> <span class="ow">in</span> <span class="n">top_node_indices</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node_index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">kalimat</span><span class="p">[</span><span class="n">node_index</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 5: Namun, Heru tidak dapat memastikan target waktu penyelesaian pemindahan kabel ke seluruh sarana jaringan utilitas terpadu (SJUT) di wilayah Mampang Prapatan itu.
+Node 0: Pemprov DKI Sebut Pemindahan Kabel ke Bawah Tanah di Mampang Sudah 90 Persen 
+Tim Redaksi
+JAKARTA, KOMPAS.com - Pelaksana Tugas (Plt) Kepala Dinas Bina Marga DKI Jakarta Heru Suwondo menyebut proses pemindahan kabel jaringan utilitas di Ibu Kota ke bawah tanah di kawasan Mampang Prapatan, Jakarta Selatan, sudah 90 persen.
+Node 6: Baca juga: Heru Budi Akui Sulit Rapikan Kabel Semrawut di Udara ke Bawah Tanah
+Menurut Heru, proses pemindahan ke SJUT itu terus dilakukan setiap hari sampai tidak ada lagi kabel semrawut di udara.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2436,12 +3465,12 @@ Rumus Perhitungan Closeness Centrality:</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="MLP_Clasifier.html"
+       href="UAS_PenambanganData.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">MLP Clasifer</p>
+        <p class="prev-next-title">UAS Penambangan Data</p>
       </div>
     </a>
 </div>
@@ -2450,6 +3479,39 @@ Rumus Perhitungan Closeness Centrality:</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menginstall-dan-mengimport-library-yang-dibutuhkan">Menginstall dan mengimport library yang dibutuhkan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive">Web Scraping Berita Kompas dan Penyimpanan ke Google Drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-dan-membaca-data-csv">Import dan Membaca Data CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis">Mengambil salah satu berita untuk menjadi sampel data yang akan dianalisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-pemrosesan-teks-preprocessing">Pra-pemrosesan Teks / Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-pengukuran-tf-idf">Metode pengukuran TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-kemiripan-kosinus">Perhitungan Kemiripan Kosinus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity">Visualisasi Hubungan Antar Kalimat Menggunakan Graf (Graph) berdasarkan Cosine Similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness">Closeness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-penggunaan-closeness">Hasil penggunaan Closeness</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-peringkat-halaman-dengan-pagerank">Menghitung peringkat halaman dengan Pagerank</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-pagerank">Hasil Pagerank</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-metode-eigenvector-centrality-untuk-menghitung-sentralitas-eigenvector-pada-graf">menggunakan metode eigenvector centrality untuk menghitung sentralitas eigenvector pada graf</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-eigen-vector">Hasil eigen vector</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

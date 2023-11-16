@@ -174,6 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Tugas-3.html">Tugas 3 Decision Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PCA-Pendata.html">PCA Pendata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MLP_Clasifier.html">MLP Clasifer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UAS_PenambanganData.html">UAS Penambangan Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling_berita_Kompas.html">Tugas Crawling_berita_Kompas</a></li>
 </ul>
 
@@ -431,7 +432,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-df1fd9d3-8a50-45e6-8ca9-1421cccf7639" class="colab-df-container">
+  <div id="df-f7867ebf-5296-43be-8106-7f868cd94b0a" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -504,7 +505,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-df1fd9d3-8a50-45e6-8ca9-1421cccf7639')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f7867ebf-5296-43be-8106-7f868cd94b0a')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -556,12 +557,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-df1fd9d3-8a50-45e6-8ca9-1421cccf7639 button.colab-df-convert');
+        document.querySelector('#df-f7867ebf-5296-43be-8106-7f868cd94b0a button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-df1fd9d3-8a50-45e6-8ca9-1421cccf7639');
+        const element = document.querySelector('#df-f7867ebf-5296-43be-8106-7f868cd94b0a');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -621,12 +622,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
-       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
-       &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
-       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
-       &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
-       &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;], dtype=&#39;&lt;U10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;],
+      dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
 </div>
@@ -642,12 +644,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9333333333333333
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  1.0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[14,  0,  0],
-       [ 0,  6,  0],
-       [ 0,  2,  8]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 8,  0,  0],
+       [ 0, 14,  0],
+       [ 0,  0,  8]])
 </pre></div>
 </div>
 </div>
@@ -661,7 +663,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-0f4eddc6-6668-47dd-8e5a-3dc4357885f4" class="colab-df-container">
+  <div id="df-640d2de1-d908-45b6-9331-85462b104a99" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -687,43 +689,43 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>8</th>
@@ -737,8 +739,8 @@ document.write(`
     </tr>
     <tr>
       <th>10</th>
-      <td>virginica</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>11</th>
@@ -747,8 +749,8 @@ document.write(`
     </tr>
     <tr>
       <th>12</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>13</th>
@@ -767,7 +769,7 @@ document.write(`
     </tr>
     <tr>
       <th>16</th>
-      <td>virginica</td>
+      <td>versicolor</td>
       <td>versicolor</td>
     </tr>
     <tr>
@@ -787,43 +789,43 @@ document.write(`
     </tr>
     <tr>
       <th>20</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>27</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>28</th>
@@ -841,7 +843,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-0f4eddc6-6668-47dd-8e5a-3dc4357885f4')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-640d2de1-d908-45b6-9331-85462b104a99')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -893,12 +895,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-0f4eddc6-6668-47dd-8e5a-3dc4357885f4 button.colab-df-convert');
+        document.querySelector('#df-640d2de1-d908-45b6-9331-85462b104a99 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-0f4eddc6-6668-47dd-8e5a-3dc4357885f4');
+        const element = document.querySelector('#df-640d2de1-d908-45b6-9331-85462b104a99');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});

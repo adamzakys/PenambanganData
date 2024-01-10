@@ -30,8 +30,10 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['from google.colab import drive', "drive.mount('/content/drive')", '', 'csv = {"Judul": [], "Berita": []}', '']
-...
-['        csv["Berita"].append(isi)', '', '        data = pd.DataFrame(csv)', "        csv_path_drive = '/content/drive/My Drive/Penambangan WEB/Data/Data_BeritaKompas.csv'", '        data.to_csv(csv_path_drive, index=False)']
+from google.colab import drive
+drive.mount('/content/drive')
+file_path = "/content/drive/My Drive/Penambangan WEB/Data/Data_BeritaKompas.csv"
+df = pd.read_csv(file_path)
+df
 -------------------
 

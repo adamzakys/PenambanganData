@@ -1,0 +1,2654 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Tugas Crawling_berita_Kompas dan ekstrak kata kunci &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas/Crawling_EkstraksiKataKunci';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tugas Crawling_berita_Kompas dan ekstrak kata kunci" href="Crawling_berita_Kompas.html" />
+    <link rel="prev" title="Crawl Berita Kompas" href="CrawlNews_Kategori.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Selamat Datang di Jupyter Book Saya
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tugas-1.html">Tugas 1 Menghitung Jarak Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas-2.html">Tugas 2 Kategorial IRIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas-UTS.html">Tugas UTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas-3.html">Tugas 3 Decision Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PCA-Pendata.html">PCA Pendata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MLP_Clasifier.html">MLP Clasifer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UAS_PenambanganData.html">UAS Penambangan Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CrawlNews_Kategori.html">Crawl Berita Kompas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Crawling_berita_Kompas dan ekstrak kata kunci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling_berita_Kompas.html">Tugas Crawling_berita_Kompas dan ekstrak kata kunci</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/adamzakys/penambangandata/blob/gh-pages/_sources/Tugas/Crawling_EkstraksiKataKunci.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/adamzakys/penambangandata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/adamzakys/penambangandata/issues/new?title=Issue%20on%20page%20%2FTugas/Crawling_EkstraksiKataKunci.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Tugas/Crawling_EkstraksiKataKunci.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tugas Crawling_berita_Kompas dan ekstrak kata kunci</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menginstall-dan-mengimport-library-yang-dibutuhkan">Menginstall dan mengimport library yang dibutuhkan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive">Web Scraping Berita Kompas dan Penyimpanan ke Google Drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-dan-membaca-data-csv">Import dan Membaca Data CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis">Mengambil salah satu berita untuk menjadi sampel data yang akan dianalisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-pemrosesan-teks-preprocessing">Pra-pemrosesan Teks / Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-kemiripan-kosinus">Perhitungan Kemiripan Kosinus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity">Visualisasi Hubungan Antar Kalimat Menggunakan Graf (Graph) berdasarkan Cosine Similarity</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-crawling-berita-kompas-dan-ekstrak-kata-kunci">
+<h1>Tugas Crawling_berita_Kompas dan ekstrak kata kunci<a class="headerlink" href="#tugas-crawling-berita-kompas-dan-ekstrak-kata-kunci" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Nama : Muhammad Adam Zaky Jiddyansah</p></li>
+<li><p>NIM : 210411100234</p></li>
+<li><p>Kelas : Penambangan dan Pencarian Web B</p></li>
+</ul>
+<section id="menginstall-dan-mengimport-library-yang-dibutuhkan">
+<h2>Menginstall dan mengimport library yang dibutuhkan<a class="headerlink" href="#menginstall-dan-mengimport-library-yang-dibutuhkan" title="Permalink to this heading">#</a></h2>
+<p>Libraries yang Digunakan</p>
+<ul class="simple">
+<li><p>BeautifulSoup (bs4): Library untuk melakukan web scraping dan ekstraksi data HTML.</p></li>
+<li><p>Requests: Library untuk membuat permintaan HTTP ke situs web dan mendapatkan konten halaman.</p></li>
+<li><p>Pandas (pd): Library untuk mengelola dan menyimpan data dalam format CSV.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">soup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span><span class="p">,</span><span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;punkt&quot;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;stopwords&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive">
+<h2>Web Scraping Berita Kompas dan Penyimpanan ke Google Drive<a class="headerlink" href="#web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive" title="Permalink to this heading">#</a></h2>
+<p>Kode ini menggunakan teknik web scraping untuk mengumpulkan judul dan isi berita dari 200 halaman indeks situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>. Berikut adalah penjelasan komponen utama dari kode tersebut:</p>
+<p><strong>Proses Web Scraping dan menyimpan data</strong></p>
+<ul class="simple">
+<li><p>Iterasi sebanyak 5 (karna yang akan dipreprocessing kali ini cuman 1 berita) halaman indeks(tergantung indeks pada website) di situs <a class="reference external" href="http://Kompas.com">Kompas.com</a>.</p></li>
+<li><p>Untuk setiap halaman, melakukan permintaan HTTP dan mendapatkan konten HTML.</p></li>
+<li><p>Menggunakan BeautifulSoup untuk mengekstrak daftar berita dari halaman tersebut.</p></li>
+<li><p>Untuk setiap berita, mengakses halaman individu untuk mengambil judul dan isi berita.</p></li>
+<li><p>Data judul dan isi berita ditambahkan ke dalam dictionary csv.
+Penyimpanan Data</p></li>
+<li><p>Setelah proses scraping selesai, data disimpan dalam file CSV dengan nama “Data_BeritaKompas.csv” terlebih dahulu di environment Colab.</p></li>
+<li><p>File CSV tersebut disalin ke dalam Google Drive pada path “/content/drive/My Drive/Penambangan WEB/Data/”.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">csv</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Judul&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;Berita&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://indeks.kompas.com/?page=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">page_html</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">content</span>
+    <span class="n">page_soup</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="n">page_html</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="n">berita</span> <span class="o">=</span> <span class="n">page_soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;latest--indeks mt2 clearfix&quot;</span><span class="p">})</span>
+
+    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">berita</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">&#39;a.article__link&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">])</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+        <span class="n">halaman_isi</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;col-bs10-10&quot;</span><span class="p">})</span>
+
+        <span class="n">judul_berita</span> <span class="o">=</span> <span class="n">halaman_isi</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;read__title&quot;</span><span class="p">})</span>
+        <span class="n">judul</span> <span class="o">=</span> <span class="n">judul_berita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+
+        <span class="n">isi_berita</span> <span class="o">=</span> <span class="n">halaman_isi</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+        <span class="n">isi</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">isi_berita</span><span class="p">])</span>
+
+        <span class="n">csv</span><span class="p">[</span><span class="s2">&quot;Judul&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">judul</span><span class="p">)</span>
+        <span class="n">csv</span><span class="p">[</span><span class="s2">&quot;Berita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">csv</span><span class="p">)</span>
+        <span class="n">csv_path_drive</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/My Drive/Penambangan WEB/Data/Data_BeritaKompas.csv&#39;</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">csv_path_drive</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-3-ed80b370b050&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">csv</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Judul&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;Berita&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">100</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">129</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-dan-membaca-data-csv">
+<h2>Import dan Membaca Data CSV<a class="headerlink" href="#import-dan-membaca-data-csv" title="Permalink to this heading">#</a></h2>
+<p>Menggunakan Pandas untuk membaca file CSV yang telah disimpan sebelumnya. File CSV tersebut berisi data judul dan isi berita dari <a class="reference external" href="http://Kompas.com">Kompas.com</a> yang telah di-web scrape sebelumnya, lalu menampilkan data yang telah dibaca dari file CSV dalam bentuk DataFrame untuk dapat dianalisis lebih lanjut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/My Drive/Penambangan WEB/Data/Data_BeritaKompas.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-99714964-933d-4a04-bf5e-8123aeb251fc" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Berita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lirik dan Makna Lagu Oh Indang Oh Apang, Lagu ...</td>
+      <td>Lirik dan Makna Lagu Oh Indang Oh Apang, Lagu ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Berapa Banyak Kalori yang Dibakar dengan Berja...</td>
+      <td>Berapa Banyak Kalori yang Dibakar dengan Berja...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Pendaftaran Petugas KPPS Pemilu 2024 Dibuka, B...</td>
+      <td>Pendaftaran Petugas KPPS Pemilu 2024 Dibuka, B...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Produser Ungkap Tiket Advance Siksa Neraka Sol...</td>
+      <td>Produser Ungkap Tiket Advance Siksa Neraka Sol...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Peringati Hari Korban 40 Ribu Jiwa, Pj Gubernu...</td>
+      <td>Peringati Hari Korban 40 Ribu Jiwa, Pj Gubernu...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Lirik dan Chord Lagu Salam Kenal - Vidi Aldiano</td>
+      <td>Lirik dan Chord Lagu Salam Kenal - Vidi Aldian...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Pikap Tabrak Truk Tronton di Kota Malang, Satu...</td>
+      <td>Pikap Tabrak Truk Tronton di Kota Malang, Satu...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Perbandingan Yamaha XMAX 250 Tech Max dan Kymc...</td>
+      <td>Perbandingan Yamaha XMAX 250 Tech Max dan Kymc...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Hasil Mediasi Keluarga Bayi HNM: RS Hermina Po...</td>
+      <td>Hasil Mediasi Keluarga Bayi HNM: RS Hermina Po...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Tanggapi Hasil Survei Litbang "Kompas", Mahfud...</td>
+      <td>Tanggapi Hasil Survei Litbang "Kompas", Mahfud...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Kepsek SMA 17 Makassar Dimutasi Dampak Aksi De...</td>
+      <td>Kepsek SMA 17 Makassar Dimutasi Dampak Aksi De...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Status WhatsApp Bakal Bisa Dibagikan Langsung ...</td>
+      <td>Status WhatsApp Bakal Bisa Dibagikan Langsung ...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Alat yang Bekerja Berdasarkan Prinsip Tuas</td>
+      <td>Alat yang Bekerja Berdasarkan Prinsip Tuas\nPe...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Pelaku Perusakan Belasan Mobil Dinas di Semara...</td>
+      <td>Pelaku Perusakan Belasan Mobil Dinas di Semara...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Rafael Alun Dihukum Bayar Uang Pengganti 18,9 ...</td>
+      <td>Rafael Alun Dihukum Bayar Uang Pengganti 18,9 ...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Begini Peran Teknik Industri dalam Pemanfaatan...</td>
+      <td>Begini Peran Teknik Industri dalam Pemanfaatan...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Lexus Siapkan RZ550e, RZ Berperforma Tinggi</td>
+      <td>Lexus Siapkan RZ550e, RZ Berperforma Tinggi\nT...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Pengendara Motor Tewas di Lokasi Kejadian Sete...</td>
+      <td>Pengendara Motor Tewas di Lokasi Kejadian Sete...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Newcastle Vs Milan, Kabar Baik untuk Rossoneri...</td>
+      <td>Newcastle Vs Milan, Kabar Baik untuk Rossoneri...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-99714964-933d-4a04-bf5e-8123aeb251fc')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-99714964-933d-4a04-bf5e-8123aeb251fc button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-99714964-933d-4a04-bf5e-8123aeb251fc');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-492e6df8-4ed2-415b-b06d-b1deb7f758cf">
+  <button class="colab-df-quickchart" onclick="quickchart('df-492e6df8-4ed2-415b-b06d-b1deb7f758cf')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-492e6df8-4ed2-415b-b06d-b1deb7f758cf button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis">
+<h2>Mengambil salah satu berita untuk menjadi sampel data yang akan dianalisis<a class="headerlink" href="#mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">berita</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span>
+<span class="n">berita</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Begini Peran Teknik Industri dalam Pemanfaatan AI di Era Industri 4.0\n\nKOMPAS.com – Implementasi kecerdasan buatan atau artificial intelligence (AI) dalam industri menjadi salah satu poin utama untuk merespons kompleksitas era digital.\nTidak hanya berpengaruh pada operasional bisnis, AI juga dapat membuka pintu bagi berbagai peluang inovatif.\nSelain AI, era yang dikenal sebagai industri 4.0 menggambarkan integrasi teknologi canggih lain, seperti internet of things (IoT) dan big data, dalam proses industri. Integrasi ini dilakukan untuk meningkatkan efisiensi dan produktivitas.\nPada tingkat global, AI telah menjadi katalisator perubahan dalam industri. Menurut laporan dari Grand View Research, pasar AI diproyeksikan mencapai nilai triliunan dollar AS pada 2028 dengan tingkat pertumbuhan yang signifikan.\nHal senada juga disampaikan National Technology Officer Microsoft Indonesia Panji Wasmana. Menurutnya, teknologi AI dan komputasi awan (cloud) memainkan peranan penting dalam mewujudkan industri 4.0.\nBagi industri, keduanya dapat meningkatkan kolaborasi, automasi, produktivitas, dan kemampuan analisis data sehingga memungkinkan pelaku industri untuk tetap terdepan.\nSementara, survei yang dilakukan PwC menyebutkan, sebanyak 54 persen eksekutif perusahaan percaya bahwa AI berdampak positif terhadap rantai pasok karena dapat meningkatkan visibilitas dan responsif terhadap perubahan pasar.\nHal itu juga tecermin pada sektor manufaktur. Dengan menganalisis data secara besar-besaran, AI dapat memberikan prediksi yang akurat tentang permintaan pasar, mengoptimalkan persediaan, dan mengurangi pemborosan.\nMeski demikian, hanya sebagian kecil perusahaan yang berhasil mengimplementasikan AI secara menyeluruh. Hal ini menunjukkan ada kesenjangan antara potensi dan implementasi yang berhasil.\nMasalah utama yang dihadapi industri dalam mengadopsi AI adalah kompleksitas mengintegrasikan dan mentransformasikannya secara digital.\nSebagian besar perusahaan kesulitan memahami integrasi teknologi baru ke dalam infrastruktur yang sudah ada tanpa mengganggu operasional yang sedang berlangsung. Kondisi ini membuat perusahaan membutuhkan sumber daya manusia (SDM) yang terampil dan memiliki pemahaman mendalam tentang implementasi AI.\nTeknik industri jadi solusi\nUntuk menghadapi kompleksitas transformasi industri yang didorong AI, ilmu teknik industri dapat menjadi garda terdepan dalam mendidik calon pemimpin yang memahami integrasi teknologi dan proses bisnis.\nSalah satu perguruan tinggi yang menyediakan program studi teknik industri adalah Binus University.\nHead of Industrial Engineering Study Program Binus University Ir Taufik, ST, MM, PhD, IPM menekankan bahwa profesional industri perlu memiliki pemahaman mendalam tentang cara mengoptimalkan kecerdasan buatan dalam bisnis dan operasi sehari-hari.\n“Program studi Teknik Industri Binus University menyajikan kurikulum terkini serta relevan yang dapat menjembatani kesenjangan antara teknologi AI dan kebutuhan bisnis,” ujar Taufik dalam siaran pers yang diterima Kompas.com, Senin (11/12/2023).\nDalam menghadapi revolusi AI yang tak terelakkan, lanjut dia, ilmu teknik industri tidak hanya menawarkan pendidikan yang relevan, tetapi juga memberikan fasilitas yang mendukung pemahaman mendalam tentang peran AI dalam dunia industri.\nTaufik mengatakan, dengan teknologi terkini dan kurikulum yang terus diperbarui, ilmu teknik industri menjadi kunci untuk membekali calon penerus bangsa dengan kemampuan mengelola dan memimpin dalam era industri yang didorong oleh AI.\n“Dengan upaya terus-menerus dalam pengembangan teknologi dan SDM yang terampil, kita dapat merangkul masa depan industri yang semakin cerdas dan inovatif,” ucap Taufik.\nSebagai informasi, untuk meningkatkan pemahaman mahasiswa terkait industri 4.0, Binus University juga menyediakan Laboratorium Digital Industry sebagai representasi industri termaju atau smart manufacturing.\nDi laboratorium itu, mahasiswa tidak hanya mempelajari konsep dasar industri 4.0, seperti virtual reality (VR), augmented reality (AR), analisis dan visualisasi data, automasi, serta simulasi, tetapi juga mengimplementasikannya dalam sesuai dengan kebutuhan industri.\nMelalui laboratorium tersebut, mahasiswa dapat mengendalikan mesin produksi dari tempat yang berbeda serta menjalankan proses manufaktur, seperti menghidupkan mesin, memonitor konsumsi energi, dan menanggapi penolakan produk.\nMahasiswa juga dapat mengolah database terkait proses produksi untuk memprediksi permintaan produk serga menentukan perbaikan pada proses dan sistem produksi.\nBeberapa peralatan yang tersedia pada laboratorium meliputi Xite Automax 250, Rokoko Suite, Oculus/Meta Quest 2, dan Driving Simulation.\nSelain itu, ada pula Computer Laboratory dengan 20 komputer yang memberikan akses langsung untuk mengimplementasikan konsep AI dalam berbagai proyek nyata dalam modeling, simulasi produksi, dan data.\nProgram yang berhasil diolah melalui komputer tersebut nantinya dapat diproses dalam Laboratorium Manufacturing Process. Dengan demikian, mahasiswa dapat memahami dan menganalisis proses industri manufaktur secara menyeluruh.\nSebagai persiapan untuk dunia industri nyata, laboratorium tersebut menjadi tempat bagi mahasiswa untuk mewujudkan konsep mereka menjadi produk, mengeksplorasi kreativitas dalam desain dan implementasi produk bersama tim, serta mempelajari langkah-langkah pembuatan produk.\nBeberapa peralatan yang juga tersedia di sana adalah Mesin CNC Milling, Mesin Lathe, Mesin Gerinda, dan 3D Printing.\nTak hanya itu, Binus University juga menyediakan Laboratorium Human-Integrated Systems. Di laboratorium ini, mahasiswa dapat merancang sistem kerja dengan mempertimbangkan aspek ergonomis manusia. Dengan demikian, peningkatan produksi dapat tercapai seiring jaminan keselamatan pekerja.\nLaboratorium tersebut dilengkapi sejumlah alat, seperti Ergo-bike dan Heart Rate Monitor. Kedua alat ini dapat membantu mahasiswa untuk menganalisis serta memberikan solusi efisiensi gerakan kerja dan memahami faktor manusia dalam lingkungan kerja.\nMahasiswa juga dapat merancang aplikasi bisnis proses yang berbasis kemudahan dan pengambilan keputusan.\nUntuk mendapatkan informasi lebih lanjut tentang Program Studi Teknik Industri di Binus University, Anda bisa mengunjungi tautan berikut.\nCopyright 2008 - 2023 PT. Kompas Cyber Media (Kompas Gramedia Digital Group). All Rights Reserved.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pra-pemrosesan-teks-preprocessing">
+<h2>Pra-pemrosesan Teks / Preprocessing<a class="headerlink" href="#pra-pemrosesan-teks-preprocessing" title="Permalink to this heading">#</a></h2>
+<p>Mengambil teks sebagai input dan melakukan beberapa langkah pra-pemrosesan pada teks dalam bahasa Indonesia. Langkah-langkah tersebut mencakup penghapusan angka, pembersihan karakter khusus, konversi teks ke huruf kecil, penghapusan kata-kata umum (stopwords), dan penggabungan kata-kata yang telah melalui proses sebelumnya. Tujuannya adalah membersihkan dan mempersiapkan teks agar dapat digunakan lebih lanjut dalam analisis atau pemrosesan lanjutan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s.]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">filtered_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+
+    <span class="n">preprocessing_text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered_words</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">preprocessing_text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">berita</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="p">(</span><span class="n">berita</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">berita</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peran teknik industri pemanfaatan ai era industri . kompas.com implementasi kecerdasan buatan artificial intelligence ai industri salah poin utama merespons kompleksitas era digital. berpengaruh operasional bisnis ai membuka pintu peluang inovatif. ai era dikenal industri . menggambarkan integrasi teknologi canggih internet of things iot big data proses industri. integrasi meningkatkan efisiensi produktivitas. tingkat global ai katalisator perubahan industri. laporan grand view research pasar ai diproyeksikan mencapai nilai triliunan dollar as tingkat pertumbuhan signifikan. senada national technology officer microsoft indonesia panji wasmana. menurutnya teknologi ai komputasi awan cloud memainkan peranan mewujudkan industri .. industri meningkatkan kolaborasi automasi produktivitas kemampuan analisis data pelaku industri terdepan. survei pwc persen eksekutif perusahaan percaya ai berdampak positif rantai pasok meningkatkan visibilitas responsif perubahan pasar. tecermin sektor manufaktur. menganalisis data besarbesaran ai prediksi akurat permintaan pasar mengoptimalkan persediaan mengurangi pemborosan. perusahaan berhasil mengimplementasikan ai menyeluruh. kesenjangan potensi implementasi berhasil. utama dihadapi industri mengadopsi ai kompleksitas mengintegrasikan mentransformasikannya digital. perusahaan kesulitan memahami integrasi teknologi infrastruktur mengganggu operasional berlangsung. kondisi perusahaan membutuhkan sumber daya manusia sdm terampil memiliki pemahaman mendalam implementasi ai. teknik industri solusi menghadapi kompleksitas transformasi industri didorong ai ilmu teknik industri garda terdepan mendidik calon pemimpin memahami integrasi teknologi proses bisnis. salah perguruan menyediakan program studi teknik industri binus university. head of industrial engineering study program binus university ir taufik st mm phd ipm menekankan profesional industri memiliki pemahaman mendalam mengoptimalkan kecerdasan buatan bisnis operasi seharihari. program studi teknik industri binus university menyajikan kurikulum terkini relevan menjembatani kesenjangan teknologi ai kebutuhan bisnis taufik siaran pers diterima kompas.com senin . menghadapi revolusi ai terelakkan ilmu teknik industri menawarkan pendidikan relevan fasilitas mendukung pemahaman mendalam peran ai dunia industri. taufik teknologi terkini kurikulum diperbarui ilmu teknik industri kunci membekali calon penerus bangsa kemampuan mengelola memimpin era industri didorong ai. upaya terusmenerus pengembangan teknologi sdm terampil merangkul industri cerdas inovatif taufik. informasi meningkatkan pemahaman mahasiswa terkait industri . binus university menyediakan laboratorium digital industry representasi industri termaju smart manufacturing. laboratorium mahasiswa mempelajari konsep dasar industri . virtual reality vr augmented reality ar analisis visualisasi data automasi simulasi mengimplementasikannya sesuai kebutuhan industri. laboratorium mahasiswa mengendalikan mesin produksi berbeda menjalankan proses manufaktur menghidupkan mesin memonitor konsumsi energi menanggapi penolakan produk. mahasiswa mengolah database terkait proses produksi memprediksi permintaan produk serga menentukan perbaikan proses sistem produksi. peralatan tersedia laboratorium meliputi xite automax rokoko suite oculusmeta quest driving simulation. computer laboratory komputer akses langsung mengimplementasikan konsep ai proyek nyata modeling simulasi produksi data. program berhasil diolah komputer diproses laboratorium manufacturing process. mahasiswa memahami menganalisis proses industri manufaktur menyeluruh. persiapan dunia industri nyata laboratorium mahasiswa mewujudkan konsep produk mengeksplorasi kreativitas desain implementasi produk tim mempelajari langkahlangkah pembuatan produk. peralatan tersedia mesin cnc milling mesin lathe mesin gerinda d printing. binus university menyediakan laboratorium humanintegrated systems. laboratorium mahasiswa merancang sistem kerja mempertimbangkan aspek ergonomis manusia. peningkatan produksi tercapai seiring jaminan keselamatan pekerja. laboratorium dilengkapi alat ergobike heart rate monitor. alat membantu mahasiswa menganalisis solusi efisiensi gerakan kerja memahami faktor manusia lingkungan kerja. mahasiswa merancang aplikasi bisnis proses berbasis kemudahan pengambilan keputusan. informasi program studi teknik industri binus university mengunjungi tautan berikut. copyright pt. kompas cyber media kompas gramedia digital group. all rights reserved.
+</pre></div>
+</div>
+</div>
+</div>
+<p>##Memisahakan kalimat dengan word tokenize</p>
+<p>Tokenisasi kalimat adalah proses memecah sebuah teks menjadi kalimat-kalimat yang lebih kecil atau unit yang disebut token, di mana token dapat berupa kata, frasa, atau karakter. Word tokenization, atau tokenisasi kata, adalah jenis tokenisasi yang fokus pada memecah teks menjadi unit kata.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kalimat</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">berita</span><span class="p">)</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="p">[</span><span class="n">sentence</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">kalimat</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;peran teknik industri pemanfaatan ai era industri &#39;, &#39;kompascom implementasi kecerdasan buatan artificial intelligence ai industri salah poin utama merespons kompleksitas era digital&#39;, &#39;berpengaruh operasional bisnis ai membuka pintu peluang inovatif&#39;, &#39;ai era dikenal industri &#39;, &#39;menggambarkan integrasi teknologi canggih internet of things iot big data proses industri&#39;, &#39;integrasi meningkatkan efisiensi produktivitas&#39;, &#39;tingkat global ai katalisator perubahan industri&#39;, &#39;laporan grand view research pasar ai diproyeksikan mencapai nilai triliunan dollar as tingkat pertumbuhan signifikan&#39;, &#39;senada national technology officer microsoft indonesia panji wasmana&#39;, &#39;menurutnya teknologi ai komputasi awan cloud memainkan peranan mewujudkan industri  industri meningkatkan kolaborasi automasi produktivitas kemampuan analisis data pelaku industri terdepan&#39;, &#39;survei pwc persen eksekutif perusahaan percaya ai berdampak positif rantai pasok meningkatkan visibilitas responsif perubahan pasar&#39;, &#39;tecermin sektor manufaktur&#39;, &#39;menganalisis data besarbesaran ai prediksi akurat permintaan pasar mengoptimalkan persediaan mengurangi pemborosan&#39;, &#39;perusahaan berhasil mengimplementasikan ai menyeluruh&#39;, &#39;kesenjangan potensi implementasi berhasil&#39;, &#39;utama dihadapi industri mengadopsi ai kompleksitas mengintegrasikan mentransformasikannya digital&#39;, &#39;perusahaan kesulitan memahami integrasi teknologi infrastruktur mengganggu operasional berlangsung&#39;, &#39;kondisi perusahaan membutuhkan sumber daya manusia sdm terampil memiliki pemahaman mendalam implementasi ai&#39;, &#39;teknik industri solusi menghadapi kompleksitas transformasi industri didorong ai ilmu teknik industri garda terdepan mendidik calon pemimpin memahami integrasi teknologi proses bisnis&#39;, &#39;salah perguruan menyediakan program studi teknik industri binus university&#39;, &#39;head of industrial engineering study program binus university ir taufik st mm phd ipm menekankan profesional industri memiliki pemahaman mendalam mengoptimalkan kecerdasan buatan bisnis operasi seharihari&#39;, &#39;program studi teknik industri binus university menyajikan kurikulum terkini relevan menjembatani kesenjangan teknologi ai kebutuhan bisnis taufik siaran pers diterima kompascom senin &#39;, &#39;menghadapi revolusi ai terelakkan ilmu teknik industri menawarkan pendidikan relevan fasilitas mendukung pemahaman mendalam peran ai dunia industri&#39;, &#39;taufik teknologi terkini kurikulum diperbarui ilmu teknik industri kunci membekali calon penerus bangsa kemampuan mengelola memimpin era industri didorong ai&#39;, &#39;upaya terusmenerus pengembangan teknologi sdm terampil merangkul industri cerdas inovatif taufik&#39;, &#39;informasi meningkatkan pemahaman mahasiswa terkait industri &#39;, &#39;binus university menyediakan laboratorium digital industry representasi industri termaju smart manufacturing&#39;, &#39;laboratorium mahasiswa mempelajari konsep dasar industri &#39;, &#39;virtual reality vr augmented reality ar analisis visualisasi data automasi simulasi mengimplementasikannya sesuai kebutuhan industri&#39;, &#39;laboratorium mahasiswa mengendalikan mesin produksi berbeda menjalankan proses manufaktur menghidupkan mesin memonitor konsumsi energi menanggapi penolakan produk&#39;, &#39;mahasiswa mengolah database terkait proses produksi memprediksi permintaan produk serga menentukan perbaikan proses sistem produksi&#39;, &#39;peralatan tersedia laboratorium meliputi xite automax rokoko suite oculusmeta quest driving simulation&#39;, &#39;computer laboratory komputer akses langsung mengimplementasikan konsep ai proyek nyata modeling simulasi produksi data&#39;, &#39;program berhasil diolah komputer diproses laboratorium manufacturing process&#39;, &#39;mahasiswa memahami menganalisis proses industri manufaktur menyeluruh&#39;, &#39;persiapan dunia industri nyata laboratorium mahasiswa mewujudkan konsep produk mengeksplorasi kreativitas desain implementasi produk tim mempelajari langkahlangkah pembuatan produk&#39;, &#39;peralatan tersedia mesin cnc milling mesin lathe mesin gerinda d printing&#39;, &#39;binus university menyediakan laboratorium humanintegrated systems&#39;, &#39;laboratorium mahasiswa merancang sistem kerja mempertimbangkan aspek ergonomis manusia&#39;, &#39;peningkatan produksi tercapai seiring jaminan keselamatan pekerja&#39;, &#39;laboratorium dilengkapi alat ergobike heart rate monitor&#39;, &#39;alat membantu mahasiswa menganalisis solusi efisiensi gerakan kerja memahami faktor manusia lingkungan kerja&#39;, &#39;mahasiswa merancang aplikasi bisnis proses berbasis kemudahan pengambilan keputusan&#39;, &#39;informasi program studi teknik industri binus university mengunjungi tautan berikut&#39;, &#39;copyright pt&#39;, &#39;kompas cyber media kompas gramedia digital group&#39;, &#39;all rights reserved&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kata</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">berita</span><span class="p">)</span>
+<span class="n">kata</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kata</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+<span class="n">kata</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">kata</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;dihadapi&#39;, &#39;as&#39;, &#39;merangkul&#39;, &#39;pemborosan&#39;, &#39;printing&#39;, &#39;solusi&#39;, &#39;perguruan&#39;, &#39;signifikan&#39;, &#39;konsumsi&#39;, &#39;membuka&#39;, &#39;katalisator&#39;, &#39;konsep&#39;, &#39;desain&#39;, &#39;awan&#39;, &#39;serga&#39;, &#39;systems&#39;, &#39;pelaku&#39;, &#39;kolaborasi&#39;, &#39;menjembatani&#39;, &#39;monitor&#39;, &#39;pasar&#39;, &#39;mempertimbangkan&#39;, &#39;humanintegrated&#39;, &#39;peranan&#39;, &#39;pemanfaatan&#39;, &#39;laboratorium&#39;, &#39;produk&#39;, &#39;technology&#39;, &#39;memahami&#39;, &#39;binus&#39;, &#39;berhasil&#39;, &#39;sistem&#39;, &#39;pt&#39;, &#39;pers&#39;, &#39;head&#39;, &#39;senin&#39;, &#39;ergobike&#39;, &#39;rights&#39;, &#39;jaminan&#39;, &#39;cloud&#39;, &#39;gerakan&#39;, &#39;kesulitan&#39;, &#39;menentukan&#39;, &#39;prediksi&#39;, &#39;membekali&#39;, &#39;gramedia&#39;, &#39;produktivitas&#39;, &#39;diolah&#39;, &#39;peluang&#39;, &#39;proyek&#39;, &#39;gerinda&#39;, &#39;manusia&#39;, &#39;mm&#39;, &#39;analisis&#39;, &#39;didorong&#39;, &#39;upaya&#39;, &#39;rantai&#39;, &#39;representasi&#39;, &#39;nilai&#39;, &#39;kemampuan&#39;, &#39;terusmenerus&#39;, &#39;kebutuhan&#39;, &#39;mengintegrasikan&#39;, &#39;memprediksi&#39;, &#39;daya&#39;, &#39;oculusmeta&#39;, &#39;database&#39;, &#39;mengimplementasikannya&#39;, &#39;seiring&#39;, &#39;bisnis&#39;, &#39;diterima&#39;, &#39;pekerja&#39;, &#39;dilengkapi&#39;, &#39;pasok&#39;, &#39;berikut&#39;, &#39;senada&#39;, &#39;..&#39;, &#39;study&#39;, &#39;diperbarui&#39;, &#39;terkait&#39;, &#39;terkini&#39;, &#39;mendukung&#39;, &#39;pengembangan&#39;, &#39;intelligence&#39;, &#39;inovatif&#39;, &#39;perusahaan&#39;, &#39;studi&#39;, &#39;mendidik&#39;, &#39;pendidikan&#39;, &#39;cerdas&#39;, &#39;manufacturing&#39;, &#39;tersedia&#39;, &#39;tautan&#39;, &#39;kunci&#39;, &#39;of&#39;, &#39;langkahlangkah&#39;, &#39;berbasis&#39;, &#39;peralatan&#39;, &#39;salah&#39;, &#39;d&#39;, &#39;phd&#39;, &#39;indonesia&#39;, &#39;akses&#39;, &#39;st&#39;, &#39;reality&#39;, &#39;program&#39;, &#39;tim&#39;, &#39;potensi&#39;, &#39;tercapai&#39;, &#39;global&#39;, &#39;artificial&#39;, &#39;menurutnya&#39;, &#39;research&#39;, &#39;percaya&#39;, &#39;all&#39;, &#39;things&#39;, &#39;penerus&#39;, &#39;canggih&#39;, &#39;persiapan&#39;, &#39;pertumbuhan&#39;, &#39;terampil&#39;, &#39;menghadapi&#39;, &#39;kompas.com&#39;, &#39;mentransformasikannya&#39;, &#39;digital&#39;, &#39;cyber&#39;, &#39;big&#39;, &#39;mengunjungi&#39;, &#39;grand&#39;, &#39;ipm&#39;, &#39;ir&#39;, &#39;taufik&#39;, &#39;menghidupkan&#39;, &#39;nyata&#39;, &#39;internet&#39;, &#39;produksi&#39;, &#39;keselamatan&#39;, &#39;alat&#39;, &#39;suite&#39;, &#39;driving&#39;, &#39;lingkungan&#39;, &#39;transformasi&#39;, &#39;penolakan&#39;, &#39;sektor&#39;, &#39;engineering&#39;, &#39;diproses&#39;, &#39;laporan&#39;, &#39;integrasi&#39;, &#39;terdepan&#39;, &#39;utama&#39;, &#39;mengadopsi&#39;, &#39;national&#39;, &#39;memimpin&#39;, &#39;merespons&#39;, &#39;memainkan&#39;, &#39;perbaikan&#39;, &#39;simulation&#39;, &#39;kemudahan&#39;, &#39;dikenal&#39;, &#39;positif&#39;, &#39;mengoptimalkan&#39;, &#39;faktor&#39;, &#39;mengganggu&#39;, &#39;berbeda&#39;, &#39;mahasiswa&#39;, &#39;manufaktur&#39;, &#39;modeling&#39;, &#39;tecermin&#39;, &#39;membutuhkan&#39;, &#39;ar&#39;, &#39;tingkat&#39;, &#39;operasi&#39;, &#39;aplikasi&#39;, &#39;automax&#39;, &#39;pengambilan&#39;, &#39;meliputi&#39;, &#39;dollar&#39;, &#39;mengurangi&#39;, &#39;mengelola&#39;, &#39;revolusi&#39;, &#39;reserved&#39;, &#39;data&#39;, &#39;siaran&#39;, &#39;mendalam&#39;, &#39;memiliki&#39;, &#39;berlangsung&#39;, &#39;milling&#39;, &#39;menyajikan&#39;, &#39;sdm&#39;, &#39;memonitor&#39;, &#39;kompleksitas&#39;, &#39;peningkatan&#39;, &#39;quest&#39;, &#39;kecerdasan&#39;, &#39;ai&#39;, &#39;mengimplementasikan&#39;, &#39;kondisi&#39;, &#39;efisiensi&#39;, &#39;implementasi&#39;, &#39;bangsa&#39;, &#39;vr&#39;, &#39;buatan&#39;, &#39;sesuai&#39;, &#39;mengolah&#39;, &#39;mencapai&#39;, &#39;visualisasi&#39;, &#39;lathe&#39;, &#39;permintaan&#39;, &#39;proses&#39;, &#39;rate&#39;, &#39;dasar&#39;, &#39;virtual&#39;, &#39;process&#39;, &#39;responsif&#39;, &#39;komputer&#39;, &#39;menawarkan&#39;, &#39;kerja&#39;, &#39;view&#39;, &#39;garda&#39;, &#39;university&#39;, &#39;iot&#39;, &#39;energi&#39;, &#39;kompas&#39;, &#39;cnc&#39;, &#39;menyeluruh&#39;, &#39;mempelajari&#39;, &#39;akurat&#39;, &#39;peran&#39;, &#39;survei&#39;, &#39;automasi&#39;, &#39;kurikulum&#39;, &#39;teknologi&#39;, &#39;era&#39;, &#39;pwc&#39;, &#39;ilmu&#39;, &#39;perubahan&#39;, &#39;fasilitas&#39;, &#39;simulasi&#39;, &#39;laboratory&#39;, &#39;ergonomis&#39;, &#39;poin&#39;, &#39;informasi&#39;, &#39;keputusan&#39;, &#39;menganalisis&#39;, &#39;augmented&#39;, &#39;persediaan&#39;, &#39;meningkatkan&#39;, &#39;sumber&#39;, &#39;terelakkan&#39;, &#39;mengeksplorasi&#39;, &#39;triliunan&#39;, &#39;industri&#39;, &#39;visibilitas&#39;, &#39;termaju&#39;, &#39;mewujudkan&#39;, &#39;smart&#39;, &#39;profesional&#39;, &#39;mesin&#39;, &#39;menjalankan&#39;, &#39;komputasi&#39;, &#39;kesenjangan&#39;, &#39;xite&#39;, &#39;membantu&#39;, &#39;diproyeksikan&#39;, &#39;pemimpin&#39;, &#39;industry&#39;, &#39;aspek&#39;, &#39;copyright&#39;, &#39;officer&#39;, &#39;berpengaruh&#39;, &#39;berdampak&#39;, &#39;merancang&#39;, &#39;kreativitas&#39;, &#39;wasmana&#39;, &#39;infrastruktur&#39;, &#39;besarbesaran&#39;, &#39;rokoko&#39;, &#39;menyediakan&#39;, &#39;mengendalikan&#39;, &#39;calon&#39;, &#39;persen&#39;, &#39;dunia&#39;, &#39;media&#39;, &#39;pintu&#39;, &#39;menanggapi&#39;, &#39;microsoft&#39;, &#39;pembuatan&#39;, &#39;group&#39;, &#39;seharihari&#39;, &#39;teknik&#39;, &#39;menggambarkan&#39;, &#39;langsung&#39;, &#39;eksekutif&#39;, &#39;heart&#39;, &#39;relevan&#39;, &#39;pemahaman&#39;, &#39;operasional&#39;, &#39;industrial&#39;, &#39;panji&#39;, &#39;menekankan&#39;, &#39;computer&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi DataFrame</span>
+<span class="n">matriks_kata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">kata</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">kata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">kalimat</span><span class="p">:</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">current_word</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">next_word</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># Pastikan kedua kata ada dalam indeks matrikskata sebelum mengupdate nilai</span>
+        <span class="k">if</span> <span class="n">current_word</span> <span class="ow">in</span> <span class="n">matriks_kata</span><span class="o">.</span><span class="n">index</span> <span class="ow">and</span> <span class="n">next_word</span> <span class="ow">in</span> <span class="n">matriks_kata</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">matriks_kata</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">current_word</span><span class="p">,</span> <span class="n">next_word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriks_kata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-3c9a4f32-e317-470f-be1f-debe441df3f1" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dihadapi</th>
+      <th>as</th>
+      <th>merangkul</th>
+      <th>pemborosan</th>
+      <th>printing</th>
+      <th>solusi</th>
+      <th>perguruan</th>
+      <th>signifikan</th>
+      <th>konsumsi</th>
+      <th>membuka</th>
+      <th>...</th>
+      <th>langsung</th>
+      <th>eksekutif</th>
+      <th>heart</th>
+      <th>relevan</th>
+      <th>pemahaman</th>
+      <th>operasional</th>
+      <th>industrial</th>
+      <th>panji</th>
+      <th>menekankan</th>
+      <th>computer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>dihadapi</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>as</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>merangkul</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>pemborosan</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>printing</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>operasional</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>industrial</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>panji</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>menekankan</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>computer</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>301 rows × 301 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-3c9a4f32-e317-470f-be1f-debe441df3f1')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-3c9a4f32-e317-470f-be1f-debe441df3f1 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-3c9a4f32-e317-470f-be1f-debe441df3f1');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-e22f724a-7901-46c0-9db9-a017f4f1f53b">
+  <button class="colab-df-quickchart" onclick="quickchart('df-e22f724a-7901-46c0-9db9-a017f4f1f53b')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-e22f724a-7901-46c0-9db9-a017f4f1f53b button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="perhitungan-kemiripan-kosinus">
+<h2>Perhitungan Kemiripan Kosinus<a class="headerlink" href="#perhitungan-kemiripan-kosinus" title="Permalink to this heading">#</a></h2>
+<p>Menghitung kemiripan kosinus antara semua pasangan kalimat menggunakan matriks TF-IDF yang telah dihasilkan sebelumnya. Kemudian, hasil kemiripan kosinus tersebut disimpan dalam DataFrame untuk kemudahan analisis.</p>
+<p><strong>Rumus Perhitungan Kemiripan Kosinus:</strong></p>
+<ul class="simple">
+<li><p>Untuk dua vektor A dan B, kemiripan kosinus dihitung dengan rumus $<span class="math notranslate nohighlight">\( \text{Similarity}(A, B) = \frac{{A \cdot B}}{{\|A\| \cdot \|B\|}} \)</span>$</p></li>
+<li><p>Di sini, ⋅ adalah operasi perkalian dot (dot product), dan ∥∥ adalah norma Euclidean. Dalam konteks ini, vektor A dan B adalah vektor representasi TF-IDF dari dua kalimat. Hasilnya adalah skalar yang menunjukkan seberapa mirip dua kalimat tersebut, dengan nilai 1 menunjukkan kemiripan sempurna.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cosine</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">matriks_kata</span><span class="p">,</span> <span class="n">matriks_kata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">similarity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cosine</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">matriks_kata</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">matriks_kata</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">similarity</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-941de8c6-ac83-4e2e-aaf5-c745aff81148" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dihadapi</th>
+      <th>as</th>
+      <th>merangkul</th>
+      <th>pemborosan</th>
+      <th>printing</th>
+      <th>solusi</th>
+      <th>perguruan</th>
+      <th>signifikan</th>
+      <th>konsumsi</th>
+      <th>membuka</th>
+      <th>...</th>
+      <th>langsung</th>
+      <th>eksekutif</th>
+      <th>heart</th>
+      <th>relevan</th>
+      <th>pemahaman</th>
+      <th>operasional</th>
+      <th>industrial</th>
+      <th>panji</th>
+      <th>menekankan</th>
+      <th>computer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>dihadapi</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>as</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>merangkul</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pemborosan</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>printing</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>operasional</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>industrial</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>panji</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>menekankan</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>computer</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>301 rows × 301 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-941de8c6-ac83-4e2e-aaf5-c745aff81148')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-941de8c6-ac83-4e2e-aaf5-c745aff81148 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-941de8c6-ac83-4e2e-aaf5-c745aff81148');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-c2b68071-0b86-48f2-98fe-bd21d1222a38">
+  <button class="colab-df-quickchart" onclick="quickchart('df-c2b68071-0b86-48f2-98fe-bd21d1222a38')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-c2b68071-0b86-48f2-98fe-bd21d1222a38 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: Total number of columns (301) exceeds max_columns (20) limiting to first (20) columns.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity">
+<h2>Visualisasi Hubungan Antar Kalimat Menggunakan Graf (Graph) berdasarkan Cosine Similarity<a class="headerlink" href="#visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity" title="Permalink to this heading">#</a></h2>
+<p>Membuat graf yang merepresentasikan hubungan antara kalimat-kalimat berdasarkan nilai cosine similarity. Setiap kalimat direpresentasikan sebagai node, dan garis yang menghubungkan dua node menunjukkan tingkat kemiripan antara kalimat tersebut. Semakin panjang dan tebal garis, semakin tinggi tingkat kemiripan antara dua kalimat. Graf ini membantu memvisualisasikan struktur hubungan antar kalimat dalam teks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cosine</span><span class="p">)):</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cosine</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cosine</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">cosine</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mf">0.1</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;salmon&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f105c3a52d40255e678661a5073e874fb3396a02dd4709c01af2458489e9fdd6.png" src="../_images/f105c3a52d40255e678661a5073e874fb3396a02dd4709c01af2458489e9fdd6.png" />
+</div>
+</div>
+<p>#Menemukan Kata kunci</p>
+<p>##Page Rank
+<strong>PageRank</strong> adalah algoritma yang dikembangkan oleh Larry Page dan Sergey Brin, pendiri Google. Algoritma ini digunakan oleh mesin pencari Google untuk menentukan peringkat atau relevansi halaman web dalam hasil pencarian. Ide utama di balik PageRank adalah bahwa halaman web yang banyak di-link oleh halaman web lain dianggap lebih penting dan memiliki peringkat yang lebih tinggi.</p>
+<p><strong>Konsep Dasar:</strong></p>
+<p>Prinsip Dasar: PageRank bekerja berdasarkan prinsip bahwa sebuah tautan dari halaman A ke halaman B dapat dianggap sebagai suara suara atau dukungan dari halaman A untuk halaman B. Semakin banyak tautan yang menuju ke sebuah halaman, semakin besar “nilai suara” atau “nilai dukungan” yang diberikan oleh halaman tersebut.</p>
+<p>Tautan Kembali (Backlink): Pentingnya suatu halaman tidak hanya bergantung pada jumlah tautan masuk, tetapi juga pada kualitas tautan tersebut. Tautan dari halaman dengan peringkat tinggi lebih berharga daripada tautan dari halaman dengan peringkat rendah.
+Rumus dasar PageRank dapat direpresentasikan sebagai sistem persamaan linear. Misalkan ada N  halaman web, dan PR(A) adalah PageRank halaman A Persamaan PageRank untuk halaman A adalah :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}[PR(A) = (1 - d) + d \\left( \\frac{{PR(B)}}{{L(B)}} + \\frac{{PR(C)}}{{L(C)}} + \\ldots + \\frac{{PR(N)}}{{L(N)}} \\right)\end{split}\]</div>
+<p>Dengan :</p>
+<p>(d) adalah faktor damping (biasanya diatur sekitar 0.85).”</p>
+<p>(PR(B), PR(C), \ldots, PR(N)) adalah PageRank dari halaman-halaman yang terhubung ke halaman (A).”</p>
+<p>(L(B), L(C), \ldots, L(N))$$ adalah jumlah tautan keluar dari halaman (B, C, \ldots, N).”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pagerank</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">sorted_pagerank</span><span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pagerank</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Page Rank :&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">pagerank</span> <span class="ow">in</span> <span class="n">sorted_pagerank</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">pagerank</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Page Rank :
+Node 194: 0.0188
+Node 208: 0.0167
+Node 251: 0.0163
+Node 164: 0.0156
+Node 231: 0.0129
+Node 79: 0.0126
+Node 69: 0.0126
+Node 198: 0.0125
+Node 232: 0.0112
+Node 61: 0.0112
+Node 235: 0.0106
+Node 254: 0.0103
+Node 11: 0.0096
+Node 227: 0.0096
+Node 0: 0.0091
+Node 2: 0.0091
+Node 16: 0.0091
+Node 57: 0.0091
+Node 141: 0.0091
+Node 158: 0.0091
+Node 210: 0.0091
+Node 256: 0.0091
+Node 281: 0.0091
+Node 289: 0.0091
+Node 91: 0.0090
+Node 20: 0.0089
+Node 195: 0.0089
+Node 246: 0.0084
+Node 25: 0.0084
+Node 80: 0.0084
+Node 229: 0.0084
+Node 243: 0.0084
+Node 24: 0.0076
+Node 54: 0.0076
+Node 83: 0.0076
+Node 109: 0.0076
+Node 113: 0.0076
+Node 150: 0.0076
+Node 179: 0.0076
+Node 275: 0.0076
+Node 147: 0.0073
+Node 31: 0.0067
+Node 277: 0.0067
+Node 41: 0.0064
+Node 216: 0.0064
+Node 264: 0.0064
+Node 241: 0.0059
+Node 6: 0.0057
+Node 10: 0.0057
+Node 30: 0.0057
+Node 34: 0.0057
+Node 44: 0.0057
+Node 46: 0.0057
+Node 47: 0.0057
+Node 48: 0.0057
+Node 59: 0.0057
+Node 63: 0.0057
+Node 64: 0.0057
+Node 87: 0.0057
+Node 89: 0.0057
+Node 134: 0.0057
+Node 161: 0.0057
+Node 162: 0.0057
+Node 169: 0.0057
+Node 196: 0.0057
+Node 199: 0.0057
+Node 211: 0.0057
+Node 213: 0.0057
+Node 219: 0.0057
+Node 226: 0.0057
+Node 238: 0.0057
+Node 239: 0.0057
+Node 244: 0.0057
+Node 269: 0.0057
+Node 291: 0.0057
+Node 292: 0.0057
+Node 81: 0.0056
+Node 184: 0.0056
+Node 181: 0.0055
+Node 28: 0.0055
+Node 132: 0.0054
+Node 186: 0.0054
+Node 206: 0.0054
+Node 278: 0.0054
+Node 82: 0.0052
+Node 111: 0.0052
+Node 131: 0.0052
+Node 260: 0.0052
+Node 207: 0.0045
+Node 183: 0.0045
+Node 88: 0.0044
+Node 166: 0.0044
+Node 187: 0.0044
+Node 197: 0.0044
+Node 133: 0.0043
+Node 145: 0.0043
+Node 155: 0.0043
+Node 258: 0.0043
+Node 53: 0.0042
+Node 126: 0.0042
+Node 135: 0.0042
+Node 205: 0.0042
+Node 191: 0.0041
+Node 237: 0.0041
+Node 257: 0.0041
+Node 262: 0.0040
+Node 295: 0.0040
+Node 45: 0.0039
+Node 123: 0.0039
+Node 12: 0.0037
+Node 107: 0.0037
+Node 73: 0.0035
+Node 172: 0.0033
+Node 201: 0.0033
+Node 296: 0.0033
+Node 5: 0.0032
+Node 142: 0.0032
+Node 286: 0.0032
+Node 290: 0.0032
+Node 40: 0.0031
+Node 140: 0.0031
+Node 77: 0.0030
+Node 105: 0.0029
+Node 23: 0.0028
+Node 66: 0.0028
+Node 106: 0.0028
+Node 78: 0.0026
+Node 121: 0.0026
+Node 152: 0.0026
+Node 153: 0.0026
+Node 190: 0.0026
+Node 248: 0.0026
+Node 86: 0.0024
+Node 234: 0.0024
+Node 84: 0.0024
+Node 130: 0.0024
+Node 255: 0.0023
+Node 85: 0.0022
+Node 143: 0.0020
+Node 112: 0.0020
+Node 225: 0.0018
+Node 17: 0.0015
+Node 118: 0.0015
+Node 165: 0.0015
+Node 202: 0.0015
+Node 49: 0.0014
+Node 120: 0.0014
+Node 218: 0.0014
+Node 271: 0.0014
+Node 160: 0.0014
+Node 51: 0.0014
+Node 230: 0.0014
+Node 1: 0.0009
+Node 3: 0.0009
+Node 4: 0.0009
+Node 7: 0.0009
+Node 8: 0.0009
+Node 9: 0.0009
+Node 13: 0.0009
+Node 14: 0.0009
+Node 15: 0.0009
+Node 18: 0.0009
+Node 19: 0.0009
+Node 21: 0.0009
+Node 22: 0.0009
+Node 26: 0.0009
+Node 27: 0.0009
+Node 29: 0.0009
+Node 32: 0.0009
+Node 33: 0.0009
+Node 35: 0.0009
+Node 36: 0.0009
+Node 37: 0.0009
+Node 38: 0.0009
+Node 39: 0.0009
+Node 42: 0.0009
+Node 43: 0.0009
+Node 50: 0.0009
+Node 52: 0.0009
+Node 55: 0.0009
+Node 56: 0.0009
+Node 58: 0.0009
+Node 60: 0.0009
+Node 62: 0.0009
+Node 65: 0.0009
+Node 67: 0.0009
+Node 68: 0.0009
+Node 70: 0.0009
+Node 71: 0.0009
+Node 72: 0.0009
+Node 74: 0.0009
+Node 75: 0.0009
+Node 76: 0.0009
+Node 90: 0.0009
+Node 92: 0.0009
+Node 93: 0.0009
+Node 94: 0.0009
+Node 95: 0.0009
+Node 96: 0.0009
+Node 97: 0.0009
+Node 98: 0.0009
+Node 99: 0.0009
+Node 100: 0.0009
+Node 101: 0.0009
+Node 102: 0.0009
+Node 103: 0.0009
+Node 104: 0.0009
+Node 108: 0.0009
+Node 110: 0.0009
+Node 114: 0.0009
+Node 115: 0.0009
+Node 116: 0.0009
+Node 117: 0.0009
+Node 119: 0.0009
+Node 122: 0.0009
+Node 124: 0.0009
+Node 125: 0.0009
+Node 127: 0.0009
+Node 128: 0.0009
+Node 129: 0.0009
+Node 136: 0.0009
+Node 137: 0.0009
+Node 138: 0.0009
+Node 139: 0.0009
+Node 144: 0.0009
+Node 146: 0.0009
+Node 148: 0.0009
+Node 149: 0.0009
+Node 151: 0.0009
+Node 154: 0.0009
+Node 156: 0.0009
+Node 157: 0.0009
+Node 159: 0.0009
+Node 163: 0.0009
+Node 167: 0.0009
+Node 168: 0.0009
+Node 170: 0.0009
+Node 171: 0.0009
+Node 173: 0.0009
+Node 174: 0.0009
+Node 175: 0.0009
+Node 176: 0.0009
+Node 177: 0.0009
+Node 178: 0.0009
+Node 180: 0.0009
+Node 182: 0.0009
+Node 185: 0.0009
+Node 188: 0.0009
+Node 189: 0.0009
+Node 192: 0.0009
+Node 193: 0.0009
+Node 200: 0.0009
+Node 203: 0.0009
+Node 204: 0.0009
+Node 209: 0.0009
+Node 212: 0.0009
+Node 214: 0.0009
+Node 215: 0.0009
+Node 217: 0.0009
+Node 220: 0.0009
+Node 221: 0.0009
+Node 222: 0.0009
+Node 223: 0.0009
+Node 224: 0.0009
+Node 228: 0.0009
+Node 233: 0.0009
+Node 236: 0.0009
+Node 240: 0.0009
+Node 242: 0.0009
+Node 245: 0.0009
+Node 247: 0.0009
+Node 249: 0.0009
+Node 250: 0.0009
+Node 252: 0.0009
+Node 253: 0.0009
+Node 259: 0.0009
+Node 261: 0.0009
+Node 263: 0.0009
+Node 265: 0.0009
+Node 266: 0.0009
+Node 267: 0.0009
+Node 268: 0.0009
+Node 270: 0.0009
+Node 272: 0.0009
+Node 273: 0.0009
+Node 274: 0.0009
+Node 276: 0.0009
+Node 279: 0.0009
+Node 280: 0.0009
+Node 282: 0.0009
+Node 283: 0.0009
+Node 284: 0.0009
+Node 285: 0.0009
+Node 287: 0.0009
+Node 288: 0.0009
+Node 293: 0.0009
+Node 294: 0.0009
+Node 297: 0.0009
+Node 298: 0.0009
+Node 299: 0.0009
+Node 300: 0.0009
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3 Node Tertinggi Page Rank :&quot;</span><span class="p">)</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">pagerank</span> <span class="ow">in</span> <span class="n">sorted_pagerank</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+  <span class="n">top_sentence</span> <span class="o">=</span> <span class="n">kata</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+  <span class="n">sentence</span> <span class="o">+=</span> <span class="n">top_sentence</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: Page Rank = </span><span class="si">{</span><span class="n">pagerank</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat: </span><span class="si">{</span><span class="n">top_sentence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 Node Tertinggi Page Rank :
+Node 194: Page Rank = 0.0188
+Kalimat: ai
+Node 208: Page Rank = 0.0167
+Kalimat: proses
+Node 251: Page Rank = 0.0163
+Kalimat: industri
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">news</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Berita yang digunakan : &#39;</span><span class="p">)</span>
+<span class="n">news</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berita yang digunakan : 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Begini Peran Teknik Industri dalam Pemanfaatan AI di Era Industri 4.0\n\nKOMPAS.com – Implementasi kecerdasan buatan atau artificial intelligence (AI) dalam industri menjadi salah satu poin utama untuk merespons kompleksitas era digital.\nTidak hanya berpengaruh pada operasional bisnis, AI juga dapat membuka pintu bagi berbagai peluang inovatif.\nSelain AI, era yang dikenal sebagai industri 4.0 menggambarkan integrasi teknologi canggih lain, seperti internet of things (IoT) dan big data, dalam proses industri. Integrasi ini dilakukan untuk meningkatkan efisiensi dan produktivitas.\nPada tingkat global, AI telah menjadi katalisator perubahan dalam industri. Menurut laporan dari Grand View Research, pasar AI diproyeksikan mencapai nilai triliunan dollar AS pada 2028 dengan tingkat pertumbuhan yang signifikan.\nHal senada juga disampaikan National Technology Officer Microsoft Indonesia Panji Wasmana. Menurutnya, teknologi AI dan komputasi awan (cloud) memainkan peranan penting dalam mewujudkan industri 4.0.\nBagi industri, keduanya dapat meningkatkan kolaborasi, automasi, produktivitas, dan kemampuan analisis data sehingga memungkinkan pelaku industri untuk tetap terdepan.\nSementara, survei yang dilakukan PwC menyebutkan, sebanyak 54 persen eksekutif perusahaan percaya bahwa AI berdampak positif terhadap rantai pasok karena dapat meningkatkan visibilitas dan responsif terhadap perubahan pasar.\nHal itu juga tecermin pada sektor manufaktur. Dengan menganalisis data secara besar-besaran, AI dapat memberikan prediksi yang akurat tentang permintaan pasar, mengoptimalkan persediaan, dan mengurangi pemborosan.\nMeski demikian, hanya sebagian kecil perusahaan yang berhasil mengimplementasikan AI secara menyeluruh. Hal ini menunjukkan ada kesenjangan antara potensi dan implementasi yang berhasil.\nMasalah utama yang dihadapi industri dalam mengadopsi AI adalah kompleksitas mengintegrasikan dan mentransformasikannya secara digital.\nSebagian besar perusahaan kesulitan memahami integrasi teknologi baru ke dalam infrastruktur yang sudah ada tanpa mengganggu operasional yang sedang berlangsung. Kondisi ini membuat perusahaan membutuhkan sumber daya manusia (SDM) yang terampil dan memiliki pemahaman mendalam tentang implementasi AI.\nTeknik industri jadi solusi\nUntuk menghadapi kompleksitas transformasi industri yang didorong AI, ilmu teknik industri dapat menjadi garda terdepan dalam mendidik calon pemimpin yang memahami integrasi teknologi dan proses bisnis.\nSalah satu perguruan tinggi yang menyediakan program studi teknik industri adalah Binus University.\nHead of Industrial Engineering Study Program Binus University Ir Taufik, ST, MM, PhD, IPM menekankan bahwa profesional industri perlu memiliki pemahaman mendalam tentang cara mengoptimalkan kecerdasan buatan dalam bisnis dan operasi sehari-hari.\n“Program studi Teknik Industri Binus University menyajikan kurikulum terkini serta relevan yang dapat menjembatani kesenjangan antara teknologi AI dan kebutuhan bisnis,” ujar Taufik dalam siaran pers yang diterima Kompas.com, Senin (11/12/2023).\nDalam menghadapi revolusi AI yang tak terelakkan, lanjut dia, ilmu teknik industri tidak hanya menawarkan pendidikan yang relevan, tetapi juga memberikan fasilitas yang mendukung pemahaman mendalam tentang peran AI dalam dunia industri.\nTaufik mengatakan, dengan teknologi terkini dan kurikulum yang terus diperbarui, ilmu teknik industri menjadi kunci untuk membekali calon penerus bangsa dengan kemampuan mengelola dan memimpin dalam era industri yang didorong oleh AI.\n“Dengan upaya terus-menerus dalam pengembangan teknologi dan SDM yang terampil, kita dapat merangkul masa depan industri yang semakin cerdas dan inovatif,” ucap Taufik.\nSebagai informasi, untuk meningkatkan pemahaman mahasiswa terkait industri 4.0, Binus University juga menyediakan Laboratorium Digital Industry sebagai representasi industri termaju atau smart manufacturing.\nDi laboratorium itu, mahasiswa tidak hanya mempelajari konsep dasar industri 4.0, seperti virtual reality (VR), augmented reality (AR), analisis dan visualisasi data, automasi, serta simulasi, tetapi juga mengimplementasikannya dalam sesuai dengan kebutuhan industri.\nMelalui laboratorium tersebut, mahasiswa dapat mengendalikan mesin produksi dari tempat yang berbeda serta menjalankan proses manufaktur, seperti menghidupkan mesin, memonitor konsumsi energi, dan menanggapi penolakan produk.\nMahasiswa juga dapat mengolah database terkait proses produksi untuk memprediksi permintaan produk serga menentukan perbaikan pada proses dan sistem produksi.\nBeberapa peralatan yang tersedia pada laboratorium meliputi Xite Automax 250, Rokoko Suite, Oculus/Meta Quest 2, dan Driving Simulation.\nSelain itu, ada pula Computer Laboratory dengan 20 komputer yang memberikan akses langsung untuk mengimplementasikan konsep AI dalam berbagai proyek nyata dalam modeling, simulasi produksi, dan data.\nProgram yang berhasil diolah melalui komputer tersebut nantinya dapat diproses dalam Laboratorium Manufacturing Process. Dengan demikian, mahasiswa dapat memahami dan menganalisis proses industri manufaktur secara menyeluruh.\nSebagai persiapan untuk dunia industri nyata, laboratorium tersebut menjadi tempat bagi mahasiswa untuk mewujudkan konsep mereka menjadi produk, mengeksplorasi kreativitas dalam desain dan implementasi produk bersama tim, serta mempelajari langkah-langkah pembuatan produk.\nBeberapa peralatan yang juga tersedia di sana adalah Mesin CNC Milling, Mesin Lathe, Mesin Gerinda, dan 3D Printing.\nTak hanya itu, Binus University juga menyediakan Laboratorium Human-Integrated Systems. Di laboratorium ini, mahasiswa dapat merancang sistem kerja dengan mempertimbangkan aspek ergonomis manusia. Dengan demikian, peningkatan produksi dapat tercapai seiring jaminan keselamatan pekerja.\nLaboratorium tersebut dilengkapi sejumlah alat, seperti Ergo-bike dan Heart Rate Monitor. Kedua alat ini dapat membantu mahasiswa untuk menganalisis serta memberikan solusi efisiensi gerakan kerja dan memahami faktor manusia dalam lingkungan kerja.\nMahasiswa juga dapat merancang aplikasi bisnis proses yang berbasis kemudahan dan pengambilan keputusan.\nUntuk mendapatkan informasi lebih lanjut tentang Program Studi Teknik Industri di Binus University, Anda bisa mengunjungi tautan berikut.\nCopyright 2008 - 2023 PT. Kompas Cyber Media (Kompas Gramedia Digital Group). All Rights Reserved.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kata Kunci :&#39;</span><span class="p">,</span> <span class="n">sentence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kata Kunci : ai, proses, industri, 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Tugas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="CrawlNews_Kategori.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crawl Berita Kompas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Crawling_berita_Kompas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tugas Crawling_berita_Kompas dan ekstrak kata kunci</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menginstall-dan-mengimport-library-yang-dibutuhkan">Menginstall dan mengimport library yang dibutuhkan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping-berita-kompas-dan-penyimpanan-ke-google-drive">Web Scraping Berita Kompas dan Penyimpanan ke Google Drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-dan-membaca-data-csv">Import dan Membaca Data CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-salah-satu-berita-untuk-menjadi-sampel-data-yang-akan-dianalisis">Mengambil salah satu berita untuk menjadi sampel data yang akan dianalisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pra-pemrosesan-teks-preprocessing">Pra-pemrosesan Teks / Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-kemiripan-kosinus">Perhitungan Kemiripan Kosinus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-hubungan-antar-kalimat-menggunakan-graf-graph-berdasarkan-cosine-similarity">Visualisasi Hubungan Antar Kalimat Menggunakan Graf (Graph) berdasarkan Cosine Similarity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
